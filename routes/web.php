@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth:web', 'as' => 'user.'], function () {
     Route::resource('fakultas', 'siswa\FakultasController');
     Route::resource('jurusan', 'siswa\JurusanController');
     Route::get('/downloadMateri/{nama_file}', [MateriController::class, 'downloadMateri']);
-    Route::post('jawabandiskusi', 'siswa\MateriController@jawabanDiskusi')->name('jawabandiskusi.jawabanDiskusi');
+    Route::post('jawabandiskusi/{id}', 'siswa\MateriController@jawabanDiskusi')->name('jawabandiskusi.jawabanDiskusi');
     Route::post('jawabantugas', 'siswa\MateriController@jawabanTugas')->name('jawabantugas.jawabanTugas');
 
 //presensi

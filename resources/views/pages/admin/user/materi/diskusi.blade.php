@@ -28,13 +28,6 @@
                             </div>
 
                         </form> --}}
-
-
-
-
-
-
-
                         <ul class="timeline">
                             <li>
 
@@ -59,16 +52,7 @@
                                     <div class="timeline-comment-box">
                                         {{-- <div class="user"><img src="/assets/img/user/user-13.jpg"></div> --}}
                                         <div class="input">
-                                            <form action="{{ route('user.jawabandiskusi.jawabanDiskusi') }}" method="POST">
-                                                {{-- <div class="input-group">
-                                                    <input type="hidden" name="id_diskusi" value="{{$id}}">
-                                                    <input type="text" id="jawaban" name="jawaban" class="form-control rounded-corner" placeholder="Write a comment..." autofocus data-parsley-required="true" value="{{{ $data->jawaban ?? old('jawaban') }}}">
-                                                    <span class="input-group-btn p-l-10">
-                                                        <button type="submit" class="btn btn-primary">Simpan</button>
-                                                    </span>
-                                                </div> --}}
-
-
+                                            <form action="{{ route('user.jawabandiskusi.jawabanDiskusi', $diskusi->id) }}" method="POST">
                                                 @csrf
                                                 <div class="form-group">
                                                     <input type="hidden" name="id_diskusi" value="{{$id}}">

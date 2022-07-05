@@ -69,7 +69,7 @@
 
 
                 <!-- begin materi-->
-                <div class="tab-pane fade active show" id="nav-pills-tab-1">
+                <div class="tab-pane fade active show" id="default-tab-1">
                     <h3 class="m-t-10">Materi</h3>
                     <p>
                                 <div class="card">

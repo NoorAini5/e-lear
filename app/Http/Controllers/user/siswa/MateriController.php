@@ -107,13 +107,14 @@ class MateriController extends Controller
         return Response()->download($filepath);
     }
 
-    public function jawabanDiskusi(Request $request)
+    public function jawabanDiskusi(Request $request, $id)
     {
 
         $request->request->add(['user_id' => auth()->user()->id]);
         // $diskusi=Diskusi::findOrFail($id);
         $jawabandiskusi=JawabanDiskusi::create($request->all());
         // return view('pages.admin.user.materi.diskusi',['jawabandiskusi' => $jawabandiskusi,'diskusi'=>$diskusi]);
+        return redirect()->route('user.diskusi.show',$id);
 
 
     }
