@@ -16,8 +16,8 @@ class JurusanController extends Controller
     public function index()
     {
 
-        $jurusan=Jurusan::get();
-        return view('pages.admin.user.jurusan.index',['jurusan' => $jurusan]);
+        $jurusans=Jurusan::get();
+        return view('pages.admin.user.jurusan.index',['jurusans' => $jurusans]);
     }
 
     /**

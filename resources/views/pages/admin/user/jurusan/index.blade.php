@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                @foreach ($jurusan as $jrs)
+                @foreach ($jurusans as $jrs)
                 <br>
                     <div class="col-xl-3 col-md-6">
                         <div class="widget widget-stats bg-info">

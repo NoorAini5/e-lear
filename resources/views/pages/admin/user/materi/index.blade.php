@@ -166,27 +166,6 @@
                 <div class="tab-pane fade" id="default-tab-3">
                     <h3 class="m-t-10"><i class="fa fa-cog"></i> Tugas</h3>
                     <p>
-                        {{-- @foreach ($tugass as $tugas)
-                        <h3 class="nav-item "> {{ $tugas->judul }}</h3>
-                        <h3 class="nav-item "> {{ $tugas->isi }}</h3>
-                        <h3><a href="/downloadMateri/{{ $tugas->nama_file }}">{{ $tugas->nama_file }}</a></h3>
-                        @endforeach --}}
-
-                        {{-- <form action="{{ route('user.jawabantugas.jawabanTugas') }}" method="POST">
-                            @csrf
-                            <div class="form-group">
-                                <input type="hidden" name="id_tugas" value="{{$tugas->id}}">
-                            </div>
-                            <div class="form-group">
-                                <label>Jawaban Anda</label>
-                                <input type="file" id="jawaban" name="jawaban" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->jawaban ?? old('jawaban') }}}">
-                            </div>
-
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
-                            </div>
-
-                        </form> --}}
 
                     @foreach ($tugass as $tugas)
                     <div class="panel-body"  style="margin-top:20px">
@@ -206,8 +185,12 @@
                             </div>
                         </div>
 
-                            <form action="{{ route('user.jawabantugas.jawabanTugas') }}" style="margin-top:10px" method="POST">
+                            <form action="{{ route('user.jawabantugas.jawabanTugas', $tugas->id) }}" style="margin-top:10px" enctype="multipart/form-data" method="POST">
+                                @csrf
                                 <div class="row fileupload-buttonbar">
+                                    <div class="form-group">
+                                        <input type="hidden" name="id_tugas" value="{{$tugas->id}}">
+                                    </div>
                                     <div class="col-xl-7">
                                             <input type="file" id="jawaban" name="jawaban" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->jawaban ?? old('jawaban') }}}">
                                         </span>
