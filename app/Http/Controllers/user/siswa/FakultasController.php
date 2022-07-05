@@ -16,7 +16,6 @@ class FakultasController extends Controller
     public function index()
     {
 
-
         $fakultas=Fakultas::get();
         return view('pages.admin.user.fakultas.index',['fakultas' => $fakultas]);
     }

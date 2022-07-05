@@ -49,7 +49,8 @@ class JurusanController extends Controller
      */
     public function show($id)
     {
-        //
+        $jurusans=Jurusan::where('fakultas', $id)->get();
+        return view('pages.admin.user.jurusan.index',['jurusans' => $jurusans]);
     }
 
     /**

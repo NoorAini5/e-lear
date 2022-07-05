@@ -53,11 +53,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::resource('jurusan', 'JurusanController');
             Route::resource('tmpresensi', 'PresensiController');
             //presensi
-            Route::get('data-absensi',[PresensiController::class,'index']);
-            Route::get('editAbsen{id}',[PresensiController::class,'editAbsen']);
-            Route::post('buatAbsen',[PresensiController::class,'buatAbsen']);
-            Route::delete('hapusAbsen{id}',[PresensiController::class,'hapusAbsen']);
-            Route::get('rekapAbsen{id}',[PresensiController::class,'rekapAbsen']);
+            // Route::get('data-absensi',[PresensiController::class,'index']);
+            // Route::get('editAbsen{id}',[PresensiController::class,'editAbsen']);
+            // Route::post('buatAbsen',[PresensiController::class,'buatAbsen']);
+            // Route::delete('hapusAbsen{id}',[PresensiController::class,'hapusAbsen']);
+            // Route::get('rekapAbsen{id}',[PresensiController::class,'rekapAbsen']);
 
         });
 

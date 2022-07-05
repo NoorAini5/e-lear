@@ -15,14 +15,14 @@ class PresensiController extends Controller
 {
     public function index(PresensiDataTable $dataTable)
     {
-        // return $dataTable->render('pages.admin.master.presensi.index');
+        return $dataTable->render('pages.admin.master.presensi.index');
 
-            $user = User::where('id');
-            return view('absensi.data-absensi', [
-                'absensi' => tm_presensi::all(),
-                'Siswa' => Siswa::pluck('id'),
-                'user' => $user
-            ]);
+            // $user = User::where('id');
+            // return view('absensi.data-absensi', [
+            //     'absensi' => tm_presensi::all(),
+            //     'Siswa' => Siswa::pluck('id'),
+            //     'user' => $user
+            // ]);
 
 
     }

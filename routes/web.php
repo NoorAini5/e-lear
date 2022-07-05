@@ -29,11 +29,11 @@ Route::group(['middleware' => 'auth:web', 'as' => 'user.'], function () {
     Route::post('jawabantugas', 'siswa\MateriController@jawabanTugas')->name('jawabantugas.jawabanTugas');
 
 //presensi
-        Route::get('absensi-siswa',[PresensiController::class,'absensiSiswa']);
-        Route::get('rekap-absenSiswa',[PresensiController::class,'rekapAbsenPegawai']);
-        Route::get('absen{id}',[PresensiController::class,'absenSiswa']);
-        Route::get('simpanAbsen{id}',[PresensiController::class,'simpanAbsen']);
-        Route::get('detailAbsen{id}',[PresensiController::class,'detailAbsen']);
+        // Route::get('absensi-siswa',[PresensiController::class,'absensiSiswa']);
+        // Route::get('rekap-absenSiswa',[PresensiController::class,'rekapAbsenPegawai']);
+        // Route::get('absen{id}',[PresensiController::class,'absenSiswa']);
+        // Route::get('simpanAbsen{id}',[PresensiController::class,'simpanAbsen']);
+        // Route::get('detailAbsen{id}',[PresensiController::class,'detailAbsen']);
 
     // Route::get('/materi', function(){
     //     return view('pages.admin.user.materi.materi');
