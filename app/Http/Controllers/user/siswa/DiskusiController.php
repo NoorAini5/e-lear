@@ -50,12 +50,10 @@ class DiskusiController extends Controller
      */
     public function show($id)
     {
-        // $mapel=Mapel::with(['Guru'])->where('id',$id)->first();
-        // $jawabandiskusis=JawabanDiskusi::with(['user'])->where('id_diskusi',$id)->first();
-
         $jawabandiskusis=JawabanDiskusi::where('id_diskusi',$id)->get();
+        $jumlah = JawabanDiskusi::where('id_diskusi',$id)->count('id_diskusi');
         $diskusi=Diskusi::findOrFail($id);
-        return view('pages.admin.user.materi.diskusi',['diskusi' => $diskusi,'id'=>$id,'jawabandiskusis'=>$jawabandiskusis]);
+        return view('pages.admin.user.materi.diskusi',['diskusi' => $diskusi,'id'=>$id,'jumlah'=>$jumlah,'jawabandiskusis'=>$jawabandiskusis]);
 
     }
 

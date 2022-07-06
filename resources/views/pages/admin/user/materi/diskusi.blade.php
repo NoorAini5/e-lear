@@ -25,7 +25,7 @@
                                     </div>
                                     <div class="timeline-likes">
                                     </div>
-                                    <span class="stats-text">21 Comments</span>
+                                    <span class="stats-text">{{ $jumlah }} Komentar</span>
                                     <div class="timeline-comment-box ">
                                         {{-- <div class="user"><img src="/assets/img/user/user-13.jpg"></div> --}}
                                         <div class="input">
@@ -47,27 +47,15 @@
                                     @foreach ($jawabandiskusis as $i)
                                     <div class="card">
                                         {{-- <h1 class="mb-5">{{ $i->jawaban}}</h1> --}}
-                                        <p>{{$i->id_diskusi}}</p>
+                                        <p>{{$i->user->name}}</p>
                                         <p>{{$i->jawaban}}</p>
                                     </div>
                                     @endforeach
 
-
-
-
-
                                 </div>
                                 <!-- end timeline-body -->
                             </li>
-
                         </ul>
-
-
-
-
-
-
-
             </div>
             </div>
         </div>
