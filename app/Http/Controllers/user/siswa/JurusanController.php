@@ -4,6 +4,7 @@ namespace App\Http\Controllers\user\siswa;
 
 use App\Http\Controllers\Controller;
 use App\Models\Jurusan;
+use App\Models\Mapel;
 use Illuminate\Http\Request;
 
 class JurusanController extends Controller
@@ -49,8 +50,8 @@ class JurusanController extends Controller
      */
     public function show($id)
     {
-        $jurusans=Jurusan::where('fakultas', $id)->get();
-        return view('pages.admin.user.jurusan.index',['jurusans' => $jurusans]);
+        $mapel2=Mapel::where('jurusan', $id)->get();
+        return view('pages.admin.user.mapel2.index',['mapel2' => $mapel2]);
     }
 
     /**

@@ -108,6 +108,16 @@ class Mapel2Controller extends Controller
     {
         //
     }
+    public function jurusan($id)
+    {
+        // dd(request()->all);
+        $mapels=Mapel::where('jurusan', $id)->get();
+        return view('pages.admin.user.mapel2.index',['mapels' => $mapels]);
+    }
+
+
+    // $jurusans=Jurusan::where('fakultas', $id)->get();
+    // return view('pages.admin.user.jurusan.index',['jurusans' => $jurusans]);
 
 
 }

@@ -24,8 +24,10 @@ Route::group(['middleware' => 'auth:web', 'as' => 'user.'], function () {
     // Route::post('jawabandiskusi', 'siswa\JawabanDiskusiController');
     Route::resource('fakultas', 'siswa\FakultasController');
     Route::resource('jurusan', 'siswa\JurusanController');
+    Route::get('mapel2/{id}', 'siswa\Mapel2Controller@jurusan')->name('mapel2.jurusan');
     Route::get('/downloadMateri/{nama_file}', [MateriController::class, 'downloadMateri']);
     Route::post('jawabandiskusi/{id}', 'siswa\MateriController@jawabanDiskusi')->name('jawabandiskusi.jawabanDiskusi');
+    Route::get('jawabandiskusi/{id}', 'siswa\MateriController@jawabanDiskusi')->name('jawabandiskusi.jawabanDiskusi');
     Route::post('jawabantugas/{id}', 'siswa\MateriController@jawabanTugas')->name('jawabantugas.jawabanTugas');
 
 //presensi
