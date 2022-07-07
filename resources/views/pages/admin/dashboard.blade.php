@@ -20,263 +20,14 @@
 <!-- end page-header -->
 
 
-<!-- begin daterange-filter -->
-{{-- <div class="d-sm-flex align-items-center mb-3">
-  <a href="#" class="btn btn-inverse mr-2 text-truncate" id="daterange-filter">
-    <i class="fa fa-calendar fa-fw text-white-transparent-5 ml-n1"></i>
-    <span>1 Jun 2020 - 7 Jun 2020</span>
-    <b class="caret"></b>
-  </a>
-  <div class="text-muted f-w-600 mt-2 mt-sm-0">compared to <span id="daterange-prev-date">24 Mar-30 Apr 2020</span></div>
-</div> --}}
-<!-- end daterange-filter -->
-
-
-<!-- begin widget-todolist -->
-{{-- <div class="widget-todolist widget-todolist-rounded">
-    <!-- begin widget-todolist-header -->
-    <div class="widget-todolist-header">
-      <div class="widget-todolist-header-left">
-        <h4 class="widget-todolist-header-title">Todolist</h4>
-      </div>
-      <div class="widget-todolist-header-right">
-        <div class="widget-todolist-header-total">
-          <span class="text-inverse">0</span>
-          <small>Done</small>
-        </div>
-      </div>
-    </div>
-</div> --}}
-    <!-- end widget-todolist-header -->
-
-    <!-- begin widget-todolist-body -->
-    {{-- <div class="widget-todolist-body">
-      <!-- begin widget-todolist-item -->
-      <div class="widget-todolist-item">
-        <div class="widget-todolist-input">
-          <div class="checkbox checkbox-css pt-0">
-            <input type="checkbox" id="widget_todolist_1" />
-            <label for="widget_todolist_1" class="p-l-15"> </label>
-          </div>
-        </div>
-        <div class="widget-todolist-content">
-          <h4 class="widget-todolist-title">Borrow Tony's travel guide</h4>
-          <p class="widget-todolist-desc">Vacation in Rome</p>
-        </div>
-        <div class="widget-todolist-icon">
-          <a href="#"><i class="fa fa-question-circle"></i></a>
-        </div>
-      </div>
-      <!-- end widget-todolist-item -->
-      ...
-      <!-- begin widget-todolist-item -->
-      <div class="widget-todolist-item">
-        <div class="widget-todolist-input">
-          <i class="fa fa-plus text-muted"></i>
-        </div>
-        <div class="widget-todolist-content">
-          <input type="text" class="form-control" placeholder="Write your task here..." />
-        </div>
-      </div>
-      <!-- end widget-todolist-item -->
-    </div> --}}
-    <!-- end widget-todolist-body -->
-  </div>
-  <!-- end widget-todolist -->
-
-
-<!-- begin timeline -->
-{{-- <ul class="timeline">
-    <li>
-        <!-- begin timeline-time -->
-        <div class="timeline-time">
-            <span class="date">today</span>
-            <span class="time">04:20</span>
-        </div>
-        <!-- end timeline-time -->
-        <!-- begin timeline-icon -->
-        <div class="timeline-icon">
-            <a href="javascript:;">&nbsp;</a>
-        </div>
-        <!-- end timeline-icon -->
-        <!-- begin timeline-body -->
-        <div class="timeline-body">
-            <div class="timeline-header">
-                <span class="userimage"><img src="/assets/img/user/user-1.jpg" alt="" /></span>
-                <span class="username"><a href="javascript:;">John Smith</a> <small></small></span>
-                <span class="views">18 Views</span>
-            </div>
-            <div class="timeline-content">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus turpis quis tincidunt luctus.
-                    Nam sagittis dui in nunc consequat, in imperdiet nunc sagittis.
-                </p>
-            </div>
-            <div class="timeline-likes">
-                <div class="stats">
-                    <span class="fa-stack fa-fw stats-icon">
-                    <i class="fa fa-circle fa-stack-2x text-danger"></i>
-                    <i class="fa fa-heart fa-stack-1x fa-inverse t-plus-1"></i>
-                    </span>
-                    <span class="fa-stack fa-fw stats-icon">
-                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span class="stats-total">4.3k</span>
-                </div>
-                <div class="stats-right">
-                    <span class="stats-text">259 Shares</span>
-                    <span class="stats-text">21 Comments</span>
-                </div>
-            </div>
-            <div class="timeline-footer">
-                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
-                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
-                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
-            </div>
-            <div class="timeline-comment-box">
-                <div class="user"><img src="/assets/img/user/user-13.jpg" /></div>
-                <div class="input">
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control rounded-corner" placeholder="Write a comment..." />
-                            <span class="input-group-btn p-l-10">
-                            <button class="btn btn-primary f-s-12 rounded-corner" type="button">Comment</button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- end timeline-body -->
-    </li>
-    <li>
-        <!-- begin timeline-time -->
-        <div class="timeline-time">
-            <span class="date">yesterday</span>
-            <span class="time">20:17</span>
-        </div>
-        <!-- end timeline-time -->
-        <!-- begin timeline-icon -->
-        <div class="timeline-icon">
-            <a href="javascript:;">&nbsp;</a>
-        </div>
-        <!-- end timeline-icon -->
-        <!-- begin timeline-body -->
-        <div class="timeline-body">
-            <div class="timeline-header">
-                <span class="userimage"><img src="/assets/img/user/user-2.jpg" alt="" /></span>
-                <span class="username">Darren Parrase</span>
-                <span class="views">82 Views</span>
-            </div>
-            <div class="timeline-content">
-                <p>Location: United States</p>
-                <div id="google-map" class="height-sm m-b-10"></div>
-            </div>
-            <div class="timeline-footer">
-                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
-                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
-                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
-            </div>
-        </div>
-        <!-- end timeline-body -->
-    </li>
-    <li>
-        <!-- begin timeline-time -->
-        <div class="timeline-time">
-            <span class="date">24 February 2014</span>
-            <span class="time">08:17</span>
-        </div>
-        <!-- end timeline-time -->
-        <!-- begin timeline-icon -->
-        <div class="timeline-icon">
-            <a href="javascript:;">&nbsp;</a>
-        </div>
-        <!-- end timeline-icon -->
-        <!-- begin timeline-body -->
-        <div class="timeline-body">
-            <div class="timeline-header">
-                <span class="userimage"><img src="/assets/img/user/user-6.jpg" alt="" /></span>
-                <span class="username">Richard Leong</span>
-                <span class="views">1,282 Views</span>
-            </div>
-            <div class="timeline-content">
-                <p class="lead">
-                    <i class="fa fa-quote-left fa-fw pull-left"></i>
-                    Quisque sed varius nisl. Nulla facilisi. Phasellus consequat sapien sit amet nibh molestie placerat. Donec nulla quam, ullamcorper ut velit vitae, lobortis condimentum magna. Suspendisse mollis in sem vel mollis.
-                    <i class="fa fa-quote-right fa-fw pull-right"></i>
-                </p>
-            </div>
-            <div class="timeline-footer">
-                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
-                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
-                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
-            </div>
-        </div>
-        <!-- end timeline-body -->
-    </li>
-    <li>
-        <!-- begin timeline-time -->
-        <div class="timeline-time">
-            <span class="date">10 January 2014</span>
-            <span class="time">20:43</span>
-        </div>
-        <!-- end timeline-time -->
-        <!-- begin timeline-icon -->
-        <div class="timeline-icon">
-            <a href="javascript:;">&nbsp;</a>
-        </div>
-        <!-- end timeline-icon -->
-        <!-- begin timeline-body -->
-        <div class="timeline-body">
-            <div class="timeline-header">
-                <span class="userimage"><img src="/assets/img/user/user-7.jpg" alt="" /></span>
-                <span class="username">Lelouch Wong</span>
-                <span class="views">1,021,282 Views</span>
-            </div>
-            <div class="timeline-content">
-                <h4 class="template-title">
-                    <i class="fa fa-map-marker-alt text-danger fa-fw"></i>
-                    795 Folsom Ave, Suite 600 San Francisco, CA 94107
-                </h4>
-                <p>In hac habitasse platea dictumst. Pellentesque bibendum id sem nec faucibus. Maecenas molestie, augue vel accumsan rutrum, massa mi rutrum odio, id luctus mauris nibh ut leo.</p>
-                <p class="m-t-20">
-                    <img src="/assets/img/gallery/gallery-4.jpg" alt="" />
-                </p>
-            </div>
-            <div class="timeline-footer">
-                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i> Like</a>
-                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-comments fa-fw fa-lg m-r-3"></i> Comment</a>
-                <a href="javascript:;" class="m-r-15 text-inverse-lighter"><i class="fa fa-share fa-fw fa-lg m-r-3"></i> Share</a>
-            </div>
-        </div>
-        <!-- end timeline-body -->
-    </li>
-    <li>
-        <!-- begin timeline-icon -->
-        <div class="timeline-icon">
-            <a href="javascript:;">&nbsp;</a>
-        </div>
-        <!-- end timeline-icon -->
-        <!-- begin timeline-body -->
-        <div class="timeline-body">
-            Loading...
-        </div>
-        <!-- begin timeline-body -->
-    </li>
-</ul> --}}
-<!-- end timeline -->
-
-
-
 <!-- begin widget-stats Siswa -->
 <div class="row">
     <div class="col-md-4">
         <div class="widget widget-stats bg-gradient-red m-b-10">
             <div class="stats-icon stats-icon-lg"><i class="fa fa-child fa-fw"></i></div>
             <div class="stats-content">
-              <div class="stats-title">Siswa</div>
-              <div class="stats-number">7,842,900</div>
+              <div class="stats-title">Fakultas</div>
+              <div class="stats-number">5</div>
               <div class="stats-progress progress">
                 <div class="progress-bar" style="width: 70.1%;"></div>
               </div>
@@ -289,8 +40,8 @@
         <div class="widget widget-stats bg-gradient-teal m-b-10">
             <div class="stats-icon stats-icon-lg"><i class="fa fa-user fa-fw"></i></div>
             <div class="stats-content">
-              <div class="stats-title">Guru</div>
-              <div class="stats-number">7,842,900</div>
+              <div class="stats-title">Jurusan</div>
+              <div class="stats-number">7</div>
               <div class="stats-progress progress">
                 <div class="progress-bar" style="width: 70.1%;"></div>
               </div>
@@ -303,8 +54,8 @@
         <div class="widget widget-stats bg-gradient-yellow m-b-10">
             <div class="stats-icon stats-icon-lg"><i class="fa fa-book fa-fw"></i></div>
             <div class="stats-content">
-              <div class="stats-title">Kelas</div>
-              <div class="stats-number">7,842,900</div>
+              <div class="stats-title">Mata Kuliah</div>
+              <div class="stats-number">3</div>
               <div class="stats-progress progress">
                 <div class="progress-bar" style="width: 70.1%;"></div>
               </div>

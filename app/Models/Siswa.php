@@ -15,7 +15,7 @@ class Siswa extends Model
     public const ACTIVE = "aktif";
 
     protected $table = 'siswas';
-    protected $fillable = ['nama','nis','no_induk','tempat_lahir','tanggal_lahir','alamat','agama','jenis_kelamin','telepon','email','foto'];
+    protected $fillable = ['user_id','nama','nis','no_induk','tempat_lahir','tanggal_lahir','alamat','agama','jenis_kelamin','telepon','email','foto'];
     public $timestamps = false;
 
     public function setNamaAttribute($value)
@@ -35,6 +35,10 @@ class Siswa extends Model
     public function Agama()
     {
         return $this->belongsTo(Agama::class, 'agama');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user');
     }
 
 }

@@ -148,11 +148,12 @@
                             <ul class="result-list">
                                 <li>
                                     <div class="note-icon f-s-30">
-                                        <i class="fab fa-discourse fa-2x"></i>
+                                        <i class="fab fa-discourse fa-2x" style="color:#7db2db"></i>
+
                                     </div>
                                     <div class="result-info">
-                                        <h4 class="title"><a href=" {{ route('user.diskusi.show',$diskusi->id) }}">{{ $diskusi->judul }}</a></h4>
-                                        <p class="desc">
+                                        <h5 class="" ><a href=" {{ route('user.diskusi.show',$diskusi->id) }}" style="color: grey">{{ $diskusi->judul }}</a></h5>
+                                        <p class="{{ $diskusi->created_at }}">
                                         </p>
                                     </div>
                                 </li>

@@ -71,4 +71,8 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(JawabanDiskusi::class, 'user_id');
     }
+    public function siswa()
+    {
+        return $this->hasMany(Mapel::class,'user');
+    }
 }

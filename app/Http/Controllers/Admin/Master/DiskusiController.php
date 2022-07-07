@@ -34,7 +34,7 @@ class DiskusiController extends Controller
         try {
             Diskusi::create($request->all());
         } catch (\Throwable $th) {
-            dd($th);
+            // dd($th);
             return back()->withInput()->withToastError('Something went wrong');
         }
 
