@@ -59,6 +59,9 @@
         <input type="time" id="jam_akhir" name="jam_akhir" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->jam_akhir ?? old('jam_akhir') }}}">
       </div>
     </div>
+    @foreach($user as $u)
+      <input type="hidden" name="user_id[]" value="{{ $u }}">
+    @endforeach
     <!-- end panel-body -->
     <!-- begin panel-footer -->
     <div class="panel-footer">

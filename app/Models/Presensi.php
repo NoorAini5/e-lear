@@ -14,13 +14,13 @@ class Presensi extends Model
 
     public const ACTIVE = "aktif";
 
-    protected $table = 'presensi';
-    protected $fillable = ['user_id','presensi_id','jam_absen','keterangan'];
+    protected $table = 'presensis';
+    protected $fillable = ['user_id', 'presensi_id', 'jam_absen', 'keterangan'];
 
     public $timestamps = false;
 
     public function Mapel()
     {
-        return $this->belongsTo(Mapel::class, 'mapel');
+        return $this->belongsTo(Mapel::class);
     }
 }

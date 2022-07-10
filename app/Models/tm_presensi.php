@@ -14,7 +14,7 @@ class tm_presensi extends Model
     public const ACTIVE = "aktif";
 
     protected $table = 'tm_presensis';
-    protected $fillable = ['mapel','hari','tanggal','jam_mulai','jam_akhir'];
+    protected $fillable = ['mapel', 'hari', 'tanggal', 'jam_mulai', 'jam_akhir'];
 
     public $timestamps = false;
 
