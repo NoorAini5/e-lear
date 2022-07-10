@@ -19,6 +19,7 @@ class CreateJawabanDiskusisTable extends Migration
             $table->string('user_id');
             $table->string('jawaban');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

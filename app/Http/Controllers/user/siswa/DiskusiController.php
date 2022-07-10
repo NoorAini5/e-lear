@@ -50,7 +50,7 @@ class DiskusiController extends Controller
      */
     public function show($id)
     {
-        $jawabandiskusis=JawabanDiskusi::where('id_diskusi',$id)->get();
+        $jawabandiskusis=JawabanDiskusi::orderBy('created_at','desc')->where('id_diskusi',$id)->get();
         $jumlah = JawabanDiskusi::where('id_diskusi',$id)->count('id_diskusi');
         $diskusi=Diskusi::findOrFail($id);
         return view('pages.admin.user.materi.diskusi',['diskusi' => $diskusi,'id'=>$id,'jumlah'=>$jumlah,'jawabandiskusis'=>$jawabandiskusis]);

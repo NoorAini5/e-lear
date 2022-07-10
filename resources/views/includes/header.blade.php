@@ -149,7 +149,7 @@ $headerTopMenu = !empty($headerTopMenu) ? $headerTopMenu : '';
         @endisset
         <li class="dropdown navbar-user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="/assets/img/user/user-13.jpg" alt="" />
+                {{-- <img src=" " alt="" /> --}}
                 @auth
                 <span class="d-none d-md-inline">{{ Auth::user()->name }}</span> <b class="caret"></b>
                 @endauth

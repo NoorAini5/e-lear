@@ -15,15 +15,12 @@ Route::group(['middleware' => 'auth:web', 'as' => 'user.'], function () {
 
     Route::group(['namespace' => 'User'], function () {
     Route::resource('mapel', 'siswa\MapelController');
-    // Route::get('diskusi/{id}', 'siswa\Mapel2Controller@tampildiskusi');
     Route::get('mapel2/ujian/{id}', [Mapel2Controller::class,'ujian'])->name('mapel2.ujian');
     Route::resource('mapel2', 'siswa\Mapel2Controller');
     Route::post('mapel2/ujian', [Mapel2Controller::class,'ujianStore'])->name('mapel2.ujian.store');
     Route::resource('materi', 'siswa\MateriController');
     Route::resource('diskusi', 'siswa\DiskusiController');
     Route::resource('tugas', 'siswa\TugasController');
-    // Route::resource('jawabandiskusi', 'siswa\JawabanDiskusiController');
-    // Route::post('jawabandiskusi', 'siswa\JawabanDiskusiController');
     Route::resource('fakultas', 'siswa\FakultasController');
     Route::resource('jurusan', 'siswa\JurusanController');
     Route::get('/downloadMateri/{nama_file}', [MateriController::class, 'downloadMateri']);

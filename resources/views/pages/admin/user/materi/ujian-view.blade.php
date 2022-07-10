@@ -31,7 +31,7 @@
                             <h5>{{ $loop->iteration }}. {{ $item->soal }}</h5>
                         </div>
                         <div class="list-group">
-                            
+
                         </div>
                         @foreach ($item->jawaban as $jawaban)
                         @php
@@ -47,13 +47,13 @@
                         @endforeach
                         <div class="d-flex justify-content-between mt-4">
                             @if ($loop->index > 0)
-        
-                                <button type="button" class="btn btn-primary btn--sebelumnya"><i class="fa fa-angle-left"></i> Sebelumnya 
-                                </button>    
+
+                                <button type="button" class="btn btn-primary btn--sebelumnya"><i class="fa fa-angle-left"></i> Sebelumnya
+                                </button>
                             @endif
                             @if ($loop->iteration == count($ujian->soal))
                             @else
-                                <button type="button" class="btn btn-success ml-auto btn--lanjut">Lanjut 
+                                <button type="button" class="btn btn-success ml-auto btn--lanjut">Lanjut
                                     <i class="fa fa-angle-right"></i></button>
                             @endif
                         </div>

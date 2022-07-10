@@ -42,26 +42,6 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
 
-    public function permohonanSkck()
-    {
-        return $this->morphMany(PermohonanSKCK::class, 'createable');
-    }
-
-    public function pemohon()
-    {
-        return $this->morphMany(Pemohon::class, 'createable');
-    }
-
-    public function kehilanganBarang()
-    {
-        return $this->morphMany(KehilanganBarang::class, 'createable');
-    }
-
-    public function spkt()
-    {
-        return $this->morphMany(SPKT::class, 'createable');
-    }
-
     public function diskusi()
     {
         return $this->hasMany(Diskusi::class, 'diskusi');
@@ -70,5 +50,9 @@ class User extends Authenticatable implements MustVerifyEmail
     public function jawaban_diskusi()
     {
         return $this->hasMany(JawabanDiskusi::class, 'jawaban_diskusi');
+    }
+    public function siswa()
+    {
+        return $this->belongsTo(Siswa::class, 'user');
     }
 }

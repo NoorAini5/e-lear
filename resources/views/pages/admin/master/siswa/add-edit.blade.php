@@ -1,6 +1,6 @@
 @extends('layouts.default', ['topMenu' => true, 'sidebarHide' => true])
 
-@section('title', isset($data) ? 'Edit Agama' : 'Create Agama' )
+@section('title', isset($data) ? 'Edit Siswa' : 'Create Siswa' )
 
 @push('css')
 <link href="{{ asset('/assets/plugins/smartwizard/dist/css/smart_wizard.css') }}" rel="stylesheet" />
@@ -40,6 +40,10 @@
     <!-- end panel-heading -->
     <!-- begin panel-body -->
     <div class="panel-body">
+        <div class="form-group">
+            <label for="name">User_id</label>
+            <x-form.Dropdown name="user_id" :options="$user_id" selected="{{{ old('user_id') ?? ($data['user_id'] ?? null) }}}" required />
+          </div>
         <div class="form-group">
           <label for="name">Nama</label>
           <input type="text" id="nama" name="nama" class="form-control" autofocus data-parsley-required="true" value="{{{ old('nama') ?? ($data['nama'] ?? null) }}}">

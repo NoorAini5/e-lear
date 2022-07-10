@@ -41,15 +41,6 @@ class MateriController extends Controller
                 $validatedData['video'] = $video;
             }
 
-            // $file = $request->file('video');
-            // $video = $file->getClientOriginalName();
-            // $file->move('video', $video);
-            // $validatedData['video'] = $video;
-            // $validatedData['isi'] = $request->isi;
-            // $validatedData['matkul'] = $request->matkul;
-            // $validatedData['nama'] = $request->nama;
-
-
             Materi::create($validatedData);
 
         return redirect(route('admin.master-data.materi.index'))->withToastSuccess('Data tersimpan');

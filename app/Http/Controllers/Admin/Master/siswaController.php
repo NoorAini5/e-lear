@@ -6,6 +6,7 @@ use App\Datatables\Admin\Master\SiswaDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Siswa;
 use App\Models\Agama;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class siswaController extends Controller
@@ -16,8 +17,9 @@ class siswaController extends Controller
     }
     public function create()
     {
+        $user_id = User::pluck('name','id');
         $jenis_agama = Agama::pluck('nama', 'id');
-        return view('pages.admin.master.siswa.add-edit', ['jenis_agama'=> $jenis_agama]);
+        return view('pages.admin.master.siswa.add-edit', ['jenis_agama'=> $jenis_agama, 'user_id'=>$user_id]);
     }
     public function store(Request $request)
     // {
@@ -40,24 +42,35 @@ class siswaController extends Controller
     {
         // dd($request->all());
 
-        $file = $request->file('foto');
+            $file = $request->file('foto');
             $foto = $file->getClientOriginalName();
-            $file->move('materi', $foto);
+            $file->move('fotosiswa', $foto);
             $validatedData['foto'] = $foto;
-            $validatedData['isi'] = $request->isi;
-            $validatedData['matkul'] = $request->matkul;
+            $validatedData['user_id'] = $request->user_id;
+            $validatedData['nis'] = $request->nis;
+            $validatedData['no_induk'] = $request->no_induk;
+            $validatedData['tempat_lahir'] = $request->tempat_lahir;
+            $validatedData['tanggal_lahir'] = $request->tanggal_lahir;
+            $validatedData['alamat'] = $request->alamat;
+            $validatedData['agama'] = $request->agama;
+            $validatedData['jenis_kelamin'] = $request->jenis_kelamin;
+            $validatedData['telepon'] = $request->telepon;
+            $validatedData['email'] = $request->email;
             $validatedData['nama'] = $request->nama;
 
             Siswa::create($validatedData);
 
         return redirect(route('admin.master-data.siswa.index'))->withToastSuccess('Data tersimpan');
+
+
     }
 
     public function edit($id)
     {
+        $user_id = User::pluck('name','id');
         $data = Siswa::findOrFail($id);
         $jenis_agama= Siswa::pluck('nama','id');
-        return view('pages.admin.master.siswa.add-edit', ['data' => $data, 'jenis_agama'=> $jenis_agama]);
+        return view('pages.admin.master.siswa.add-edit', ['data' => $data, 'jenis_agama'=> $jenis_agama,'user_id'=>$user_id]);
     }
     public function update(Request $request, $id)
     {

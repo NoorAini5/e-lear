@@ -50,12 +50,13 @@
                                         <ul class="media-list media-list-with-divider media-messaging">
                                         <li class="media media-sm">
                                             <a href="javascript:;" class="pull-left">
-                                                <img src="/assets/img/user/user-5.jpg" alt="" class="media-object rounded-corner">
+                                                <img src={{ $i->user->siswa }}alt="" class="media-object rounded-corner">
                                             </a>
                                             <div class="media-body">
                                                 <br>
                                                 <b class="media-heading">{{$i->user->name}}</b>
-                                                <p class="media-heading">{{$i->user->created_at}}</p>
+                                                <br>
+                                                <small class="timestamp">{{$i->user->created_at->diffforHumans()}}</small>
                                                 <p>{{$i->jawaban}}</p>
                                                 <br>
                                             </div>
