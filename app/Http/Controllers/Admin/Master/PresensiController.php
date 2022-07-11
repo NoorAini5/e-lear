@@ -44,6 +44,7 @@ class PresensiController extends Controller
             foreach ($data['user_id'] as $item => $value) {
                 $data2 = array(
                     'presensi_id' => $buatPresensi->id,
+                    'mapel' => $buatPresensi->mapel,
                     'user_id' => $data['user_id'][$item],
                     'keterangan' => "Belum Presensi"
                 );
