@@ -4,6 +4,7 @@
 
 @php
     use App\Models\SiswaUjian;
+    use App\Models\JawabanTugas;
 @endphp
 <!-- datatables -->
 <link href="{{ asset('/assets/plugins/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet" />
@@ -191,8 +192,33 @@
                                     <li>{{ $tugas->isi }}</li>
                                     <li><a href="/downloadMateri/{{ $tugas->nama_file }}">{{ $tugas->nama_file }}</a></li>
                                 </ul>
+
                             </div>
                         </div>
+
+
+                        @php
+                        $nilai = 'Belum upload tugas';
+                        $tugasSiswaExists = JawabanTugas::where([
+                            'user_id' => auth()->id(),
+                            'id_tugas' => $tugas->id])->count();
+
+                                if($tugasSiswaExists){
+                            $userTugasnBenar = JawabanTugas::where([
+                                'user_id' => auth()->id(),
+                                'id_tugas' => $tugas->id]);
+                                // 'benar' => '1'])->count();
+
+                            // $jumlah_soal = count($ujian->soal);
+
+                            // $nilai = 'Nilai: '.($userUjianBenar/$jumlah_soal)*100;
+                            $nilai = 'Nilai: Sudah Upload ';
+
+                        }
+                            @endphp
+
+
+                        <p> Jawaban Anda : </p>
 
                             <form action="{{ route('user.jawabantugas.jawabanTugas', $tugas->id) }}" style="margin-top:10px" enctype="multipart/form-data" method="POST">
                                 @csrf
@@ -200,21 +226,21 @@
                                     <div class="form-group">
                                         <input type="hidden" name="id_tugas" value="{{$tugas->id}}">
                                     </div>
-                                    <div class="col-xl-7">
+                                    <div class="col-xl-12">
                                             <input type="file" id="jawaban" name="jawaban" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->jawaban ?? old('jawaban') }}}">
                                         </span>
                                         <button type="submit" class="btn btn-primary start m-r-3" style="margin-top:10px">
                                             <i class="fa fa-fw fa-upload"></i>
                                             <span>Start upload</span>
                                         </button>
-                                        {{-- <button type="reset" class="btn btn-default cancel m-r-3">
+                                        <button type="reset" class="btn btn-default cancel m-r-3"  style="margin-top:10px">
                                             <i class="fa fa-fw fa-ban"></i>
                                             <span>Cancel upload</span>
                                         </button>
-                                        <button type="button" class="btn btn-default delete m-r-3">
+                                        {{-- <button type="button" class="btn btn-default delete m-r-3">
                                             <i class="fa fa-fw fa-trash"></i>
-                                            <span>Delete</span> --}}
-                                        </button>
+                                            <span>Delete</span>
+                                        </button> --}}
                                         <!-- The global file processing state -->
                                         <span class="fileupload-process"></span>
                                     </div>
@@ -229,35 +255,11 @@
                                     </div>
                                 </div>
                             </form>
-                            {{-- <div class="table-responsive">
-                                <table class="table table-striped table-condensed text-nowrap mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th width="10%">PREVIEW</th>
-                                            <th>FILE INFO</th>
-                                            <th>UPLOAD PROGRESS</th>
-                                            <th width="1%"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="files">
-                                        <tr data-id="empty">
-                                            <td colspan="4" class="text-center text-muted p-t-30 p-b-30">
-                                                <div class="m-b-10"><i class="fa fa-file fa-3x"></i></div>
-                                                <div>No file selected</div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div> --}}
-
+                            <span class="ml-auto">
+                                {{ $nilai }}
+                            </span>
                     </div>
                     @endforeach
-
-
-
-
-
-
                     </p>
 
                 </div>
@@ -272,6 +274,7 @@
                                 @endphp
                                 @foreach ($ujians as $ujian)
                                 <a href="{{ route('user.mapel2.ujian',$ujian->id) }}" class="list-group-item d-flex align-items-center list-group-item-action">
+                                  <div class="">
                                     {{ $ujian->judul }}
                                     @php
                                         $nilai = 'Belum mengikuti ujian';
@@ -279,7 +282,7 @@
                                             'user_id' => auth()->id(),
                                             'ujian_id' => $ujian->id])->count();
 
-                                        if($ujianSiswaExists){
+                                                if($ujianSiswaExists){
                                             $userUjianBenar = SiswaUjian::where([
                                                 'user_id' => auth()->id(),
                                                 'ujian_id' => $ujian->id,
@@ -290,7 +293,9 @@
                                             $nilai = 'Nilai: '.($userUjianBenar/$jumlah_soal)*100;
 
                                         }
-                                    @endphp
+                                            @endphp
+                                  </div>
+
                                     <span class="ml-auto">
                                         {{ $nilai }}
                                     </span>

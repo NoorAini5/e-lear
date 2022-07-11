@@ -5,16 +5,19 @@
 <body>
     <div class="container-xxl py-5">
         <div class="container">
+
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 {{-- <h6 class="section-title bg-white text-center text-primary px-3">Mapels</h6> --}}
                 {{-- <h1 class="mb-5">{{ $diskusi->judul}}</h1>
                 <h5 class="nav-item" > {{ $diskusi->isi }}</h5> --}}
             </div>
+
             <div class="row g-4 justify-content-center">
             <div class="card-body">
                         <ul class="timeline">
                             <li>
                                 <div class="timeline-body">
+
                                     <div class="timeline-header">
                                         {{-- <span class="userimage"><img src="/assets/img/user/user-1.jpg" alt=""></span> --}}
                                         <span class="username">{{ $diskusi->judul }}<small></small></span>
@@ -64,7 +67,9 @@
                                         </ul>
                                     {{-- </div> --}}
                                     @endforeach
-
+                                    <a href="javascript:history.back(-1);" class="btn btn-success mb-3">
+                                        <i class="fa fa-arrow-circle-left"></i> Kembali
+                                    </a>
                                 </div>
                                 <!-- end timeline-body -->
                             </li>

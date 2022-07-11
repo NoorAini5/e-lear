@@ -33,6 +33,7 @@
                         <div class="list-group">
 
                         </div>
+
                         @foreach ($item->jawaban as $jawaban)
                         @php
                             $user_jawaban = SiswaUjian::where([
@@ -41,6 +42,7 @@
                                 'ujian_soal_id' => $jawaban->ujian_soal_id,
                                 'ujian_soal_jawaban_id' => $jawaban->id])->first();
                         @endphp
+
                         <div class="list-group-item {{ $user_jawaban? ($jawaban->benar == '1'? 'bg-success text-white' : 'bg-danger text-white') : ($jawaban->benar == '1'? 'bg-success text-white' : '') }}">
                             <b>{{ $jawaban->urutan }}</b>. {{ $jawaban->jawaban }}
                         </div>
@@ -56,6 +58,9 @@
                                 <button type="button" class="btn btn-success ml-auto btn--lanjut">Lanjut
                                     <i class="fa fa-angle-right"></i></button>
                             @endif
+                            <a href="javascript:history.back();" class="btn btn-success mb-3">
+                                <i class="fa fa-arrow-circle-left"></i> Kembali
+                            </a>
                         </div>
                     </div>
                 </div>
