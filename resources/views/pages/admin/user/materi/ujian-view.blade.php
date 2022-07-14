@@ -57,6 +57,7 @@
                             @else
                                 <button type="button" class="btn btn-success ml-auto btn--lanjut">Lanjut
                                     <i class="fa fa-angle-right"></i></button>
+
                             @endif
                             <a href="javascript:history.back();" class="btn btn-success mb-3">
                                 <i class="fa fa-arrow-circle-left"></i> Kembali

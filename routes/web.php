@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\Master\MapelController;
 use App\Http\Controllers\user\siswa\Mapel2Controller;
 use App\Http\Controllers\user\siswa\MateriController;
+use App\Http\Controllers\Admin\Master\PresensiController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,12 +29,13 @@ Route::group(['middleware' => 'auth:web', 'as' => 'user.'], function () {
     Route::get('jawabandiskusi/{id}', 'siswa\MateriController@jawabanDiskusi')->name('jawabandiskusi.jawabanDiskusi');
     Route::post('jawabantugas/{id}', 'siswa\MateriController@jawabanTugas')->name('jawabantugas.jawabanTugas');
 
-//presensi
-        // Route::get('absensi-siswa',[PresensiController::class,'absensiSiswa']);
-        // Route::get('rekap-absenSiswa',[PresensiController::class,'rekapAbsenPegawai']);
-        // Route::get('absen{id}',[PresensiController::class,'absenSiswa']);
-        // Route::get('simpanAbsen{id}',[PresensiController::class,'simpanAbsen']);
-        // Route::get('detailAbsen{id}',[PresensiController::class,'detailAbsen']);
+
+    //presensi
+    Route::get('presensiSiswa', [PresensiController::class, 'tampilPresensi']);
+    Route::get('detailPresensi/{id}', [PresensiController::class, 'detailPresensi']);
+    Route::put('simpanPresensi/{id}', [PresensiController::class, 'simpanPresensiUser']);
+
+
 
     // Route::get('/materi', function(){
     //     return view('pages.admin.user.materi.materi');

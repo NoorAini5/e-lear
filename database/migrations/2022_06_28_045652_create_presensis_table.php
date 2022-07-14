@@ -19,7 +19,7 @@ class CreatePresensisTable extends Migration
             $table->string('presensi_id');
             $table->string('mapel');
             $table->time('jam_absen');
-            $table->enum('keterangan',['Hadir','Sakit','Alpha','Terlambat']);
+            $table->enum('keterangan',['Hadir','Sakit','Alpha','Terlambat','Belum Presensi']);
             $table->timestamps();
             $table->softDeletes();
 

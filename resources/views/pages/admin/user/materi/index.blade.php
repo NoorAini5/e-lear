@@ -309,11 +309,29 @@
                 <!-- begin presensi -->
                             <div class="tab-pane fade" id="default-tab-5">
                                 <h3 class="m-t-10"><i class="fa fa-cog"></i> Presensi</h3>
-                                @foreach ($presensis as $presensi)
-                                <h3 class="nav-item nav-link"> {{ $presensi->hari }}</h3>
-                                <h5 class="nav-item" > {{ $presensi->tanggal }}</h5>
-                                    @endforeach
 
+                                <div class="row">
+                                    @foreach ($presensis as $presensi)
+                                    {{-- <h3 class="nav-item nav-link"> {{ $presensi->hari }}</h3>
+                                    <h5 class="nav-item" > {{ $presensi->tanggal }}</h5> --}}
+
+                                        <div class="col-md-6">
+                                            <div class="panel panel-default" style="background:
+                                                #F8BBD0">
+                                                <div class="panel-body">
+                                                        <small></small>
+                                                        <p> {{ $presensi->hari }}, {{ $presensi->tanggal }}</p>
+                                                        <small>{{ $presensi->jam_mulai }} - {{ $presensi->jam_akhir }}</small>
+                                                        <p style="font-size: 20px; font-weight: 700"></p>
+                                                        <p></p>
+                                                        <p>Kehadiran Anda: </p>
+                                                        <a class="btn btn-default" href="">Presensi Disini</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    @endforeach
+                                </div>
                             </div>
             <!-- end presensi -->
 

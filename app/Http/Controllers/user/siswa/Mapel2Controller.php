@@ -123,7 +123,7 @@ class Mapel2Controller extends Controller
         }
         return view('pages.admin.user.materi.ujian-mulai',['ujian' => $ujian]);
     }
-    
+
     public function ujianStore(Request $request)
     {
         $request->validate([
@@ -155,7 +155,7 @@ class Mapel2Controller extends Controller
         {
             return redirect()->route('user.mapel2.show',$ujian->mapel_id)->withToastSuccess('Berhasil menyelesaikan ujian');
         }
-        
+
         return redirect()->route('user.mapel2.show',$ujian->mapel_id)->withToastError('Gagal menyelesaikan ujian');
     }
 

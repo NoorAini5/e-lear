@@ -15,7 +15,7 @@ class JawabanDiskusi extends Model
 
     protected $table = 'jawaban_diskusis';
     protected $fillable = ['id_diskusi','user_id','jawaban'];
-    public $timestamps = false;
+    // public $timestamps = false;
 
     public function mapel()
     {

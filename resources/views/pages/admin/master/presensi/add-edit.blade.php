@@ -1,6 +1,6 @@
 @extends('layouts.default', ['topMenu' => true, 'sidebarHide' => true])
 
-@section('title', isset($data) ? 'Edit Kelas' : 'Create Kelas' )
+@section('title', isset($data) ? 'Edit Presensi' : 'Create Presensi' )
 
 @push('css')
 <link href="{{ asset('/assets/plugins/smartwizard/dist/css/smart_wizard.css') }}" rel="stylesheet" />
@@ -59,6 +59,9 @@
         <input type="time" id="jam_akhir" name="jam_akhir" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->jam_akhir ?? old('jam_akhir') }}}">
       </div>
     </div>
+    @foreach($user as $u)
+      <input type="hidden" name="user_id[]" value="{{ $u }}">
+    @endforeach
     <!-- end panel-body -->
     <!-- begin panel-footer -->
     <div class="panel-footer">

@@ -40,7 +40,11 @@
                                                     {{-- <label>Jawaban Anda</label> --}}
                                                     <input type="text" id="jawaban" name="jawaban" class="form-control rounded-corner" placeholder="Tulis komentar anda . . ." autofocus data-parsley-required="true" value="{{{ $data->jawaban ?? old('jawaban') }}}">
                                                     <br>
+
                                                     <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    <a href="javascript:history.back(-1);" class="btn btn-success">
+                                                        <i class="fa fa-arrow-circle-left"></i> Kembali
+                                                    </a>
                                                 </div>
                                             </form>
                                         </div>
@@ -53,13 +57,16 @@
                                         <ul class="media-list media-list-with-divider media-messaging">
                                         <li class="media media-sm">
                                             <a href="javascript:;" class="pull-left">
+                                                {{-- <img src={{ $i->user }}alt="" class="media-object rounded-corner"> --}}
+                                                {{-- {{ $i->user-> }} --}}
                                                 <img src={{ $i->user->siswa }}alt="" class="media-object rounded-corner">
                                             </a>
                                             <div class="media-body">
                                                 <br>
                                                 <b class="media-heading">{{$i->user->name}}</b>
                                                 <br>
-                                                <small class="timestamp">{{$i->user->created_at->diffforHumans()}}</small>
+                                                <small class="timestamp">{{$i->created_at->diffforHumans()}}</small>
+                                                {{-- <small class="timestamp">{{$i->created_at->diffforHumans()}}</small> --}}
                                                 <p>{{$i->jawaban}}</p>
                                                 <br>
                                             </div>
@@ -67,9 +74,7 @@
                                         </ul>
                                     {{-- </div> --}}
                                     @endforeach
-                                    <a href="javascript:history.back(-1);" class="btn btn-success mb-3">
-                                        <i class="fa fa-arrow-circle-left"></i> Kembali
-                                    </a>
+
                                 </div>
                                 <!-- end timeline-body -->
                             </li>
