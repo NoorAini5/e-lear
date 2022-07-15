@@ -8,7 +8,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('/setting', 'SettingController');
 
 
-    Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function () {
+    Route::group(['namespace' => 'Admin', 'middleware' => 'role:admin|manager'], function () {
         Route::get('/', function () {
             return redirect(route('admin.dashboard'));
         });
@@ -23,8 +23,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         // Route::resource('prodi', 'ProdiController');
         // Route::resource('status', 'StatusController');
 
-        // Route::resource('/admin', 'AdminController');
-        // Route::resource('/user', 'UserController');
+        Route::resource('/admin', 'AdminController');
+        Route::resource('/users', 'UserController');
         // Route::resource('/orang-hilang', 'OrangHilangController');
         // Route::group(['prefix' => '/kehilangan', 'as' => 'kehilangan.'], function () {
         //     Route::get('/lampiran-dokumen', 'KehilanganBarangController@getLampiranDokumen')->name('lampiran-dokumen');

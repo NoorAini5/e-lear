@@ -12,7 +12,8 @@ Route::get('/token', function () {
 });
 
 Route::group(['middleware' => 'auth:web', 'as' => 'user.'], function () {
-    Route::view('/', 'home')->name('home');
+    // Route::view('/', 'home')->name('home');
+    Route::resource('/','Admin\DashboardController');
 
     Route::group(['namespace' => 'User'], function () {
     Route::resource('mapel', 'siswa\MapelController');

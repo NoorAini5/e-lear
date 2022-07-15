@@ -11,6 +11,7 @@ use Database\Seeders\IndoRegionSeeder;
 use Database\Seeders\PendidikanSeeder;
 use Database\Seeders\StatusKawinSeeder;
 use Database\Seeders\KeperluanSkckSeeder;
+use Database\Seeders\LaravelEntrustSeeder;
 use Database\Seeders\StatusKeluargaSeeder;
 use Database\Seeders\ObjekPengawalanSeeder;
 
@@ -24,12 +25,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            IndoRegionSeeder::class,
+            // IndoRegionSeeder::class,
             AgamaSeeder::class,
             PekerjaanSeeder::class,
             PendidikanSeeder::class,
             StatusKawinSeeder::class,
-            SettingSeeder::class
+            SettingSeeder::class,
+            // SettingSeeder::class,
+            LaravelEntrustSeeder::class,
         ]);
     }
 }

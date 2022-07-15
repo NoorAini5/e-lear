@@ -1,6 +1,6 @@
 @extends('layouts.default', ['topMenu' => true, 'sidebarHide' => true])
 
-@section('title', isset($data) ? 'Edit Pengguna' : 'Create Pengguna' )
+@section('title', 'Update Profile' )
 
 @push('css')
 <link href="{{ asset('/assets/plugins/smartwizard/dist/css/smart_wizard.css') }}" rel="stylesheet" />
@@ -19,11 +19,9 @@
 
 
 <!-- begin panel -->
-<form action="{{ isset($data) ? route('admin.users.update', $data->id) : route('admin.users.store') }}" id="form" name="form" method="POST" data-parsley-validate="true" redirect-back="true">
+<form action="{{ route('admin.users.update', $data->id) }}" id="form" name="form" method="POST" data-parsley-validate="true" redirect-back="false">
     @csrf
-    @if(isset($data))
     {{ method_field('PUT') }}
-    @endif
     <div class=" row">
         <div class="col-md-6 ui-sortable">
             <div class="panel panel-inverse">
@@ -46,7 +44,7 @@
                         <label for="name">Email</label>
                         <input type="text" id="user_email" name="user_email" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->email ?? old('user_email') }}}">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" hidden>
                         <label>Peran</label>
                         <x-form.dropdown name="user_roles[]" :options="$roles" :selected="old('user_roles') ?? (isset($data->roles) ? $data->roles->pluck('id')->toArray() : null)" placeholder="Roles" multiple />
                     </div>

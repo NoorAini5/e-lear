@@ -104,6 +104,7 @@ $sidebarClass = (!empty($sidebarTransparent)) ? 'sidebar-transparent' : '';
             $active = (empty($active) && !empty($GLOBALS['parent_active'])) ? 'active' : $active;
             echo '
             <li class="'. $hasSub .' '. $active .'">
+                <a href="'. $menu['url'] .'">
                 <a href="'. url($menu['url']) .'">
                     '. $hasImg .'
                     '. $hasBadge .'

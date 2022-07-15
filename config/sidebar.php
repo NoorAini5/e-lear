@@ -19,12 +19,12 @@ return [
             'url' => '/admin/dashboard',
             'caret' => false
         ],
-        // [
-        //     'icon' => 'fa fa-users',
-        //     'title' => 'Pengguna',
-        //     'url' => '/admin/user',
-        //     'caret' => false,
-        // ],
+        [
+            'icon' => 'fa fa-users',
+            'title' => 'Pengguna',
+            'url' => '/admin/users',
+            'caret' => false,
+        ],
         // [
         //     'icon' => 'fa fa-users',
         //     'title' => 'Admin',
@@ -113,9 +113,52 @@ return [
                         ],
                         ]
                     ]
+    ],
 
+
+
+
+    'menu_guru' => [
+
+            [
+                'icon' => 'fa fa-th-large',
+                'title' => 'Dashboard',
+                'url' => '/admin/dashboard',
+                'caret' => false
+            ],[
+                'icon' => 'fa fa-book',
+                'title' => 'Mapel',
+                'url' => '/admin/master-data/mapel',
+                'caret' => false
+            ],[
+                'icon' => 'fa fa-book',
+                'title' => 'Materi',
+                'url' => '/admin/master-data/materi',
+                'caret' => false
+            ],[
+                'icon' => 'fa fa-book',
+                'title' => 'Diskusi',
+                'url' => '/admin/master-data/diskusi',
+                'caret' => false
+            ],[
+                'icon' => 'fa fa-book',
+                'title' => 'Tugas',
+                'url' => '/admin/master-data/tugas',
+                'caret' => false
+            ],[
+                'icon' => 'fa fa-book',
+                'title' => 'Quiz',
+                'url' => '/admin/master-data/ujian',
+                'caret' => false
+            ],[
+                'icon' => 'fa fa-book',
+                'title' => 'Presensi',
+                'url' => '/admin/master-data/tmpresensi',
+                'caret' => false
+            ],
 
     ],
+
 
     'menu_user' => [
         [
