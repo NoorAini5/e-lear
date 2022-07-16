@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin\Master;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Diskusi;
 use App\Models\Mapel;
+use App\Models\Diskusi;
+use Illuminate\Http\Request;
+use App\Models\JawabanDiskusi;
+use Maatwebsite\Excel\Files\Disk;
+use App\Http\Controllers\Controller;
 use App\Datatables\Admin\Master\DiskusiDataTable;
 
 class DiskusiController extends Controller
@@ -75,5 +77,12 @@ class DiskusiController extends Controller
         } catch (\Throwable $th) {
             return response(['error' => 'Something went wrong']);
         }
+    }
+    public function show($id)
+    {
+        $jawabandiskusis=JawabanDiskusi::orderBy('created_at','desc')->where('id_diskusi',$id)->get();
+        $data = Diskusi::findOrFail($id);
+        $jumlah = JawabanDiskusi::where('id_diskusi',$id)->count('id_diskusi');
+        return view('pages.admin.master.diskusi.show', ['data' => $data,'jumlah'=>$jumlah,'jawabandiskusis'=>$jawabandiskusis]);
     }
 }

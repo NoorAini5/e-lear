@@ -32,7 +32,10 @@ class DatabaseSeeder extends Seeder
             StatusKawinSeeder::class,
             SettingSeeder::class,
             // SettingSeeder::class,
-            LaravelEntrustSeeder::class,
+            // LaravelEntrustSeeder::class,
+            FakultasSeeder::class,
+            JurusanSeeder::class,
+            MapelSeeder::class,
         ]);
     }
 }

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Guru;
+use App\Models\Fakultas;
+use App\Models\JawabanDiskusi;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -14,15 +18,16 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        // if(auth()->user()->hasRole('reguler_user')){
-        //     return view('home');
-        // }
-        // else {
-        //     return view('pages.admin.dashboard');
-        // }
-
+        $jumlah_fakultas=Fakultas::count();
+        $jumlah_siswa=Siswa::count();
+        // $jumlah_pengajar=Guru::count();
+        // $jumlah_=Guru::count();
         if(auth()->user()->hasRole('admin')){
-            return view('pages.admin.dashboard');
+
+            return view('pages.admin.dashboard',[
+                'jumlah_fakultas'=>$jumlah_fakultas,
+                'jumlah_siswa'=>$jumlah_siswa
+            ]);
         }
         elseif(auth()->user()->hasRole('manager')){
             return view('pages.admin.guru.dashboard');
@@ -61,7 +66,9 @@ class DashboardController extends Controller
      */
     public function show($id)
     {
-        //
+        $jumlah_fakultas = JawabanDiskusi::where('id_diskusi',$id)->count('id_diskusi');
+        // $jumlah = Fakultas::count();
+        return view('pages.admin.dashboard',['jumlah_fakultas'=>$jumlah_fakultas]);
     }
 
     /**

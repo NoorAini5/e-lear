@@ -7,6 +7,7 @@ use App\Models\Tugas;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Datatables\Admin\Master\TugasDataTable;
+use App\Models\JawabanTugas;
 
 class TugasController extends Controller
 {
@@ -83,25 +84,13 @@ class TugasController extends Controller
         }
 	}
 
-
-    public function proses_upload(Request $request)
+    public function show($id)
     {
-        // $request->validate([
-        //     'filename' => 'required',
-        //     'filename.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000'
-        // ]);
-        // if ($request->hasfile('filename')) {
-        //     $filename = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('filename')->getClientOriginalName());
-        //     $request->file('filename')->move(public_path('file'), $filename);
-        //      Tugas::create(
-        //             [
-        //                 'file' =>$filename
-        //             ]
-        //         );
-        //     echo'Success';
-        // }else{
-        //     echo'Gagal';
-        // }
-
+        // $jawabantugas=JawabanTugas::orderBy('created_at','desc')->where('id_diskusi',$id)->get();
+        $jawabantugas=JawabanTugas::where('id_tugas',$id)->get();
+        $data = Tugas::findOrFail($id);
+        // $jumlah = JawabanTugas::where('id_diskusi',$id)->count('id_diskusi');
+        return view('pages.admin.master.tugas.show', ['data' => $data,'jawabantugas'=>$jawabantugas]);
     }
+
 }

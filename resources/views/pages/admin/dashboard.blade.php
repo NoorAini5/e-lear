@@ -23,7 +23,7 @@
             <div class="stats-icon stats-icon-lg"><i class="fa fa-child fa-fw"></i></div>
             <div class="stats-content">
               <div class="stats-title">Siswa</div>
-              <div class="stats-number">5</div>
+              <div class="stats-number">{{ $jumlah_siswa }}</div>
               <div class="stats-progress progress">
                 <div class="progress-bar" style="width: 70.1%;"></div>
               </div>
@@ -37,7 +37,7 @@
             <div class="stats-icon stats-icon-lg"><i class="fa fa-user fa-fw"></i></div>
             <div class="stats-content">
               <div class="stats-title">Guru</div>
-              <div class="stats-number">2</div>
+              <div class="stats-number"> 1 </div>
               <div class="stats-progress progress">
                 <div class="progress-bar" style="width: 70.1%;"></div>
               </div>
@@ -50,8 +50,8 @@
         <div class="widget widget-stats bg-gradient-yellow m-b-10">
             <div class="stats-icon stats-icon-lg"><i class="fa fa-book fa-fw"></i></div>
             <div class="stats-content">
-              <div class="stats-title">Mapel</div>
-              <div class="stats-number">5</div>
+              <div class="stats-title">Fakultas</div>
+              <div class="stats-number">{{ $jumlah_fakultas }}</div>
               <div class="stats-progress progress">
                 <div class="progress-bar" style="width: 70.1%;"></div>
               </div>

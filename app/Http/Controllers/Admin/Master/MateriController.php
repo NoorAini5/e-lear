@@ -81,4 +81,11 @@ class MateriController extends Controller
             return response(['error' => 'Something went wrong']);
         }
     }
+    public function show($id)
+    {
+        // $materis=Materi::where('jurusan', $id)->get();
+        $data = Materi::findOrFail($id);
+        $jenis_mapel= Materi::pluck('nama','id');
+        return view('pages.admin.master.materi.show', ['data' => $data, 'jenis_mapel'=> $jenis_mapel]);
+    }
 }

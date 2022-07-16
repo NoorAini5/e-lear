@@ -129,4 +129,12 @@ class PresensiController extends Controller
 
         Presensi::where('id', $id)->update($validatedData);
     }
+    public function show($id)
+    {
+        // $jawabantugas=JawabanTugas::orderBy('created_at','desc')->where('id_diskusi',$id)->get();
+        // $jawabantugas=Presensi::where('id_tugas',$id)->get();
+        $data = tm_presensi::findOrFail($id);
+        // $jumlah = JawabanTugas::where('id_diskusi',$id)->count('id_diskusi');
+        return view('pages.admin.master.presensi.show', ['data' => $data]);
+    }
 }

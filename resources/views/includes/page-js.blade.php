@@ -6,3 +6,4 @@
 <script src="/assets/js/custom/select2.autofocus.fix.js"></script>
 @include('sweetalert::alert')
 @stack('scripts')
+<script src="{{ $cdn?? asset('vendor/sweetalert/sweetalert.all.js') }}"></scrip>

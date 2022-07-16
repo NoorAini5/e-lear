@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Admin\Master;
 
 use App\Models\Mapel;
+use App\Models\Tugas;
 use App\Models\Ujian;
+use App\Models\UjianSoal;
+use App\Models\JawabanTugas;
 use Illuminate\Http\Request;
+use App\Models\UjianSoalJawaban;
 use App\Http\Controllers\Controller;
 use App\Datatables\Admin\Master\UjianDataTable;
-use App\Models\UjianSoal;
-use App\Models\UjianSoalJawaban;
 
 class UjianController extends Controller
 {
@@ -113,5 +115,11 @@ class UjianController extends Controller
         } catch (\Throwable $th) {
             return response(['error' => 'Something went wrong']);
         }
+    }
+    public function show($id)
+    {
+
+        $data = Ujian::findOrFail($id);
+        return view('pages.admin.master.ujian.show', ['data' => $data]);
     }
 }
