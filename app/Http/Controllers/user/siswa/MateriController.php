@@ -129,7 +129,5 @@ class MateriController extends Controller
         // $diskusi=Diskusi::findOrFail($id);
         $jawabantugas=JawabanTugas::create($request->all());
         return redirect()->route('user.tugas.show',$id);
-
-
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Kelas;
 use App\Models\Mapel;
 use App\Models\Materi;
+use App\Models\Presensi;
 use App\Models\SiswaUjian;
 use App\Models\tm_presensi;
 use App\Models\Tugas;
@@ -62,20 +63,14 @@ class Mapel2Controller extends Controller
         $mapel=Mapel::with(['Guru'])->where('id',$id)->first();
         $materis=Materi::where('matkul', $id)->get();
         $diskusis=Diskusi::where('mapel', $id)->get();
-        $presensis=tm_presensi::where('mapel', $id)->get();
+        $presensis=Presensi::where('mapel', $id)->get();
         $tugass=Tugas::where('mapel', $id)->get();
         $ujians=Ujian::where('mapel_id', $id)->get();
+
         $id_mapel=$id;
         // dd(['id_mapel' => $id_mapel, 'materis' => $materis, 'diskusis'=>$diskusis,'tugass'=>$tugass,'ujians'=>$ujians,'presensis'=>$presensis,'mapel'=>$mapel]);
         // dd($mapels);
         return view('pages.admin.user.materi.index',['id_mapel' => $id_mapel, 'materis' => $materis, 'diskusis'=>$diskusis,'tugass'=>$tugass,'ujians'=>$ujians,'presensis'=>$presensis,'mapel'=>$mapel]);
-
-
-        // $mapel2=Mapel::where('jurusan', $id)->get();
-        // // dd($mapels);
-        // return view('pages.admin.user.mapel2.index',['mapel2' => $mapel2]);
-
-
     }
 
     /**

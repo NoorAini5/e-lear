@@ -11,5 +11,20 @@ class SiswaUjian extends Model
 
     protected $guarded = ['id'];
 
-    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function ujian()
+    {
+        return $this->belongsTo(Ujian::class, 'id');
+    }
+    public function ujian_soal()
+    {
+        return $this->belongsTo(UjianSoal::class);
+    }
+    public function ujian_soal_jawaban()
+    {
+        return $this->belongsTo(UjianSoalJawaban::class);
+    }
 }

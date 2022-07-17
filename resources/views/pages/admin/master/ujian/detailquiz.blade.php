@@ -1,20 +1,6 @@
-{{-- <br>
-{{ $data->judul }}
-
-@foreach ($jawabantugas as $i)
-    <div class="">
-        <p>{{$i->jawaban}}</p>
-        <br>
-    </div>
-    <ul></ul>
-@endforeach --}}
-
-
-
-
 <html>
     <head>
-        <title>Jawaban Tugas </title>
+        <title>Jawaban Ujian | Suckittrees.com</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/dataTables.bootstrap.css">
         <!--Jika Tidak di download File Bootstrapnya silahkan gunakan link berikut-->
@@ -24,24 +10,27 @@
         <script type="text/javascript" language="javascript" src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" language="javascript" src="http://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.js"></script>
         <!--End Link yang langsung ke website nya -->
-        </head>
+    </head>
     <body>
+
         <div class="container">
-            <h2 class="text-center">  {{ $data->judul }}</h2>
-            {{-- <h2 class="text-center"> Mata Kuliah {{ $data->mapel->nama }}</h2> --}}
+            {{-- <h2 class="text-center"> Ujian {{ $data->ujian->judul }}</h2> --}}
+            <h2 class="text-center"> Oleh {{ $data->user->name }}</h2>
             <div class="box-body table-responsive">
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>Nama Siswa</th>
+                            <th>Soal</th>
                             <th>Jawaban</th>
+                            <th>Skor</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($jawabantugas as $tugas)
+                        @foreach ($soal as $i)
                         <tr>
-                            <td> {{ $tugas->user->name }}</td>
-                            <td > {{ $tugas->jawaban }}</a> </td>
+                            <td> {{ $data }}</td>
+                            <td > {{ $i->ujian_soal_jawaban->jawaban }}</td>
+                            <td > {{ $i->benar }}</td>
                         </tr>
                         @endforeach
 
@@ -49,6 +38,7 @@
                     <tfoot>
                         <tr>
                             <th>Jumlah yang sudah mengerjakan</th>
+                            <td> </td>
                             <td> 4</td>
                         </tr>
                     </tfoot>

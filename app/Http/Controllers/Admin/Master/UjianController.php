@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\UjianSoalJawaban;
 use App\Http\Controllers\Controller;
 use App\Datatables\Admin\Master\UjianDataTable;
+use App\Models\SiswaUjian;
 
 class UjianController extends Controller
 {
@@ -118,8 +119,16 @@ class UjianController extends Controller
     }
     public function show($id)
     {
-
+        // $hasilujian = SiswaUjian::findOrFail();
+        $hasilujian=SiswaUjian::where('ujian_id', $id)->get();
         $data = Ujian::findOrFail($id);
-        return view('pages.admin.master.ujian.show', ['data' => $data]);
+        return view('pages.admin.master.ujian.show', ['data' => $data,'hasilujian'=>$hasilujian]);
+    }
+    public function detailQuiz($id)
+    {
+        // $hasilujian = SiswaUjian::findOrFail();
+        $soal=SiswaUjian::where('user_id', $id)->get();
+        $data = SiswaUjian::findOrFail($id);
+        return view('pages.admin.master.ujian.detailquiz', ['data' => $data,'soal'=>$soal]);
     }
 }

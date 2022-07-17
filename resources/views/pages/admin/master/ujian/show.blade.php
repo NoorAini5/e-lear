@@ -1,6 +1,10 @@
+X
 <html>
+    {{-- @extends('layouts.default', ['topMenu' => true, 'sidebarHide' => true])
+
+@section('title', 'Ujian') --}}
     <head>
-        <title>Data Tables Dengan Bootstrap | Suckittrees.com</title>
+        <title>Jawaban Ujian | Suckittrees.com</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/dataTables.bootstrap.css">
         <!--Jika Tidak di download File Bootstrapnya silahkan gunakan link berikut-->
@@ -20,24 +24,21 @@
                     <thead>
                         <tr>
                             <th>Nama Siswa</th>
-                            <th>Nilai</th>
                             <th>Detail</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach ( as ) --}}
+                        @foreach ($hasilujian as $ujian)
                         <tr>
-                            <td> n</td>
-                            <td> 4</td>
-                            <td> 4</td>
+                            <td> {{ $ujian->user->name }}</td>
+                            <td ><a href="{{ route('admin.master-data.detailquiz.detailQuiz',$ujian->id) }}"> Lihat</a> </td>
                         </tr>
-                        {{-- @endforeach --}}
+                        @endforeach
 
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>Platform(s)</th>
-                            <th>Engine version</th>
+                            <th>Jumlah yang sudah mengerjakan</th>
                             <td> 4</td>
                         </tr>
                     </tfoot>

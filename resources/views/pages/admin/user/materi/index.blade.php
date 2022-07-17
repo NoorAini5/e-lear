@@ -320,8 +320,8 @@
                                                 #F8BBD0">
                                                 <div class="panel-body">
                                                         <small></small>
-                                                        <p> {{ $presensi->hari }}, {{ $presensi->tanggal }}</p>
-                                                        <small>{{ $presensi->jam_mulai }} - {{ $presensi->jam_akhir }}</small>
+                                                        <p> {{ $presensi }}</p>
+                                                        {{-- <small>{{ $presensi->jam_mulai }} - {{ $presensi->jam_akhir }}</small> --}}
                                                         <p style="font-size: 20px; font-weight: 700"></p>
                                                         <p></p>
                                                         <p>Kehadiran Anda: </p>
