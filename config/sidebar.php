@@ -123,7 +123,7 @@ return [
             [
                 'icon' => 'fa fa-th-large',
                 'title' => 'Dashboard',
-                'url' => '/admin/dashboard',
+                'url' => '/',
                 'caret' => false
             ],[
                 'icon' => 'fa fa-book',

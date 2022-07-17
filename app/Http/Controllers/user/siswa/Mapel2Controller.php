@@ -63,7 +63,7 @@ class Mapel2Controller extends Controller
         $mapel=Mapel::with(['Guru'])->where('id',$id)->first();
         $materis=Materi::where('matkul', $id)->get();
         $diskusis=Diskusi::where('mapel', $id)->get();
-        $presensis=Presensi::where('mapel', $id)->get();
+        $presensis=Presensi::where('mapel', $id)->where('user_id',auth()->user()->id)->get();
         $tugass=Tugas::where('mapel', $id)->get();
         $ujians=Ujian::where('mapel_id', $id)->get();
 

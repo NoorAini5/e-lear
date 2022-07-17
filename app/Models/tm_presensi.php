@@ -22,4 +22,8 @@ class tm_presensi extends Model
     {
         return $this->belongsTo(Mapel::class, 'mapel');
     }
+    public function presensi()
+    {
+        return $this->belongsTo(Presensi::class);
+    }
 }

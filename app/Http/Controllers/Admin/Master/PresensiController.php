@@ -4,14 +4,15 @@ namespace App\Http\Controllers\Admin\Master;
 
 use DateTime;
 use DateTimeZone;
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Mapel;
+use App\Models\Siswa;
 use App\Models\Presensi;
 use App\Models\tm_presensi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\DataTables\Admin\Master\PresensiDataTable;
-use App\Models\Siswa;
 
 class PresensiController extends Controller
 {
@@ -103,14 +104,24 @@ class PresensiController extends Controller
 
     public function tampilPresensi()
     {
+
+        // $time = Carbon::now();
+        // dd($time);
         $presensi = Presensi::where('user_id', auth()->user()->id)->get();
+        // return view('pages.admin.user.materi.presensi', ['presensi' => $presensi,'time'=>$time]);
     }
 
     public function detailPresensi($id)
     {
+        $timezone = 'Asia/Jakarta';
+        $date = new DateTime('now', new DateTimeZone($timezone));
+        $tanggal = $date->format('Y-m-d');
+        $localtime = $date->format('H:i:s');
         $presensi = Presensi::findOrFail($id);
-
+        // dd($presensi);
+        // dd($localtime);
         $cekPresensi = Presensi::where('presensi_id', $id)->where('user_id', auth()->user()->id)->count();
+        return view('pages.admin.user.materi.presensi', ['presensi' => $presensi,'localtime'=>$localtime]);
     }
 
     public function simpanPresensiUser($id, Request $request)

@@ -88,9 +88,10 @@ class TugasController extends Controller
     {
         // $jawabantugas=JawabanTugas::orderBy('created_at','desc')->where('id_diskusi',$id)->get();
         $jawabantugas=JawabanTugas::where('id_tugas',$id)->get();
+        $jumlahtugas=JawabanTugas::where('id_tugas',$id)->count('id_tugas');
         $data = Tugas::findOrFail($id);
         // $jumlah = JawabanTugas::where('id_diskusi',$id)->count('id_diskusi');
-        return view('pages.admin.master.tugas.show', ['data' => $data,'jawabantugas'=>$jawabantugas]);
+        return view('pages.admin.master.tugas.show', ['data' => $data,'jawabantugas'=>$jawabantugas,'jumlahtugas'=>$jumlahtugas]);
     }
 
 }

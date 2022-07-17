@@ -32,7 +32,7 @@ Route::group(['middleware' => 'auth:web', 'as' => 'user.'], function () {
 
 
     //presensi
-    Route::get('presensiSiswa', [PresensiController::class, 'tampilPresensi']);
+    Route::get('presensiSiswa/{id}  ', [PresensiController::class, 'tampilPresensi']);
     Route::get('detailPresensi/{id}', [PresensiController::class, 'detailPresensi']);
     Route::put('simpanPresensi/{id}', [PresensiController::class, 'simpanPresensiUser']);
 

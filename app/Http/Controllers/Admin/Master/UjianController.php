@@ -122,12 +122,16 @@ class UjianController extends Controller
         // $hasilujian = SiswaUjian::findOrFail();
         $hasilujian=SiswaUjian::where('ujian_id', $id)->get();
         $data = Ujian::findOrFail($id);
-        return view('pages.admin.master.ujian.show', ['data' => $data,'hasilujian'=>$hasilujian]);
+
+        $jumlahmengerjakan=SiswaUjian::where('ujian_id',$id)->count('ujian_id');
+        // $jumlah = JawabanDiskusi::where('id_diskusi',$id)->count('id_diskusi');
+        return view('pages.admin.master.ujian.show', ['data' => $data,'hasilujian'=>$hasilujian,'jumlahmengerjakan'=>$jumlahmengerjakan]);
     }
     public function detailQuiz($id)
     {
         // $hasilujian = SiswaUjian::findOrFail();
-        $soal=SiswaUjian::where('user_id', $id)->get();
+        // $soal=SiswaUjian::where('user_id', $id)->get();
+        $soal=SiswaUjian::where('id', $id)->get();
         $data = SiswaUjian::findOrFail($id);
         return view('pages.admin.master.ujian.detailquiz', ['data' => $data,'soal'=>$soal]);
     }

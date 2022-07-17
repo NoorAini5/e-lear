@@ -15,7 +15,7 @@
 
         <div class="container">
             {{-- <h2 class="text-center"> Ujian {{ $data->ujian->judul }}</h2> --}}
-            <h2 class="text-center"> Oleh {{ $data->user->name }}</h2>
+            {{-- <h2 class="text-center"> Oleh {{ $data->user->name }}</h2> --}}
             <div class="box-body table-responsive">
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
@@ -28,12 +28,11 @@
                     <tbody>
                         @foreach ($soal as $i)
                         <tr>
-                            <td> {{ $data }}</td>
+                            <td> {{ $i->ujian_soal->soal }}</td>
                             <td > {{ $i->ujian_soal_jawaban->jawaban }}</td>
                             <td > {{ $i->benar }}</td>
                         </tr>
                         @endforeach
-
                     </tbody>
                     <tfoot>
                         <tr>

@@ -320,12 +320,12 @@
                                                 #F8BBD0">
                                                 <div class="panel-body">
                                                         <small></small>
-                                                        <p> {{ $presensi }}</p>
+                                                        <p> {{ $presensi->tmpresensi->jam_mulai }} - {{ $presensi->tmpresensi->jam_akhir }}</p>
                                                         {{-- <small>{{ $presensi->jam_mulai }} - {{ $presensi->jam_akhir }}</small> --}}
                                                         <p style="font-size: 20px; font-weight: 700"></p>
                                                         <p></p>
-                                                        <p>Kehadiran Anda: </p>
-                                                        <a class="btn btn-default" href="">Presensi Disini</a>
+                                                        <p>Kehadiran Anda: {{ $presensi->keterangan }} </p>
+                                                        <a class="btn btn-default" href="/detailPresensi/{{ $presensi->id }}">Presensi Disini</a>
                                                 </div>
                                             </div>
                                         </div>

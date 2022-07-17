@@ -1,4 +1,4 @@
-X
+
 <html>
     {{-- @extends('layouts.default', ['topMenu' => true, 'sidebarHide' => true])
 
@@ -34,12 +34,11 @@ X
                             <td ><a href="{{ route('admin.master-data.detailquiz.detailQuiz',$ujian->id) }}"> Lihat</a> </td>
                         </tr>
                         @endforeach
-
                     </tbody>
                     <tfoot>
                         <tr>
                             <th>Jumlah yang sudah mengerjakan</th>
-                            <td> 4</td>
+                            <td> {{ $jumlahmengerjakan }}</td>
                         </tr>
                     </tfoot>
                 </table>
