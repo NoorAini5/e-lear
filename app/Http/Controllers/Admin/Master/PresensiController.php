@@ -13,6 +13,7 @@ use App\Models\tm_presensi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\DataTables\Admin\Master\PresensiDataTable;
+use Illuminate\Support\Facades\Redirect;
 
 class PresensiController extends Controller
 {
@@ -121,7 +122,7 @@ class PresensiController extends Controller
         // dd($presensi);
         // dd($localtime);
         $cekPresensi = Presensi::where('presensi_id', $id)->where('user_id', auth()->user()->id)->count();
-        return view('pages.admin.user.materi.presensi', ['presensi' => $presensi,'localtime'=>$localtime]);
+        return view('pages.admin.user.materi.presensi', ['presensi' => $presensi, 'localtime' => $localtime]);
     }
 
     public function simpanPresensiUser($id, Request $request)
@@ -139,6 +140,8 @@ class PresensiController extends Controller
         $validatedData['jam_absen'] = $localtime;
 
         Presensi::where('id', $id)->update($validatedData);
+
+        return Redirect::back()->with('success', 'Presensi Berhasil');
     }
     public function show($id)
     {
