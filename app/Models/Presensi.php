@@ -21,7 +21,7 @@ class Presensi extends Model
 
     public function Mapel()
     {
-        return $this->belongsTo(Mapel::class);
+        return $this->belongsTo(Mapel::class,'mapel');
     }
     public function tmpresensi()
     {

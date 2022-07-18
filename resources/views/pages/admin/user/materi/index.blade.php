@@ -317,14 +317,14 @@
 
                                         <div class="col-md-6">
                                             <div class="panel panel-default" style="background:
-                                                #F8BBD0">
+                                                #7db2db">
                                                 <div class="panel-body">
-                                                        <small></small>
+                                                        <p> {{ $presensi->tmpresensi->hari }}, {{ $presensi->tmpresensi->tanggal }} </P>
                                                         <p> {{ $presensi->tmpresensi->jam_mulai }} - {{ $presensi->tmpresensi->jam_akhir }}</p>
                                                         {{-- <small>{{ $presensi->jam_mulai }} - {{ $presensi->jam_akhir }}</small> --}}
                                                         <p style="font-size: 20px; font-weight: 700"></p>
                                                         <p></p>
-                                                        <p>Kehadiran Anda: {{ $presensi->keterangan }} </p>
+                                                        <p>Kehadiran : {{ $presensi->keterangan }} </p>
                                                         <a class="btn btn-default" href="/detailPresensi/{{ $presensi->id }}">Presensi Disini</a>
                                                 </div>
                                             </div>

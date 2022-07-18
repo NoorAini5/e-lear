@@ -52,7 +52,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::resource('fakultas', 'FakultasController');
             Route::resource('jurusan', 'JurusanController');
             Route::resource('tmpresensi', 'PresensiController');
-            Route::get('detailquiz/{id}', 'UjianController@detailQuiz')->name('detailquiz.detailQuiz');
+            Route::get('detailquiz/{id} ', 'UjianController@detailQuiz')->name('detailquiz.detailQuiz');
             //presensi
             Route::get('data-absensi',[PresensiController::class,'index']);
             Route::get('editAbsen{id}',[PresensiController::class,'editAbsen']);

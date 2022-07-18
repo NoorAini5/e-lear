@@ -53,13 +53,12 @@
                                     <span class="stats-text" id="btn-komentar-utama">{{ $jumlah }} Komentar</span>
                                     <br>
                                     @foreach ($jawabandiskusis as $i)
-
                                         <ul class="media-list media-list-with-divider media-messaging">
                                         <li class="media media-sm">
                                             <a href="javascript:;" class="pull-left">
                                                 {{-- <img src={{ $i->user }}alt="" class="media-object rounded-corner"> --}}
                                                 {{-- {{ $i->user-> }} --}}
-                                                <img src={{ $i->user->siswa }}alt="" class="media-object rounded-corner">
+                                                {{-- <img src={{ $i->user->siswa }}alt="" class="media-object rounded-corner"> --}}
                                             </a>
                                             <div class="media-body">
                                                 <br>
