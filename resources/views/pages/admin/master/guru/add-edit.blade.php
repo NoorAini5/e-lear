@@ -44,20 +44,27 @@
       </div>
       <div class="form-group">
         <label for="name">NIP</label>
-        <input type="text" id="nis" name="nis" class="form-control" autofocus data-parsley-required="true" value="{{{ old('nis') ?? ($data['nis'] ?? null) }}}">
+        <input type="text" id="nis" name="nis" class="form-control" autofocus data-parsley-required="true" minlength="10" maxlength="10" value="{{{ old('nis') ?? ($data['nis'] ?? null) }}}">
       </div>
       <div class="form-group">
-        <label for="name">No Induk</label>
-        <input type="text" id="no_induk" name="no_induk" class="form-control" autofocus data-parsley-required="true" value="{{{ old('no_induk') ?? ($data['no_induk'] ?? null) }}}">
+        {{-- <label for="name">No Induk</label> --}}
+        <input type="hidden" id="no_induk" name="no_induk" class="form-control" autofocus data-parsley-required="true" value="{{{ old('no_induk') ?? ($data['no_induk'] ?? null) }}}">
       </div>
       <div class="form-group">
         <label for="name">Tempat Lahir</label>
         <input type="text" id="tempat_lahir" name="tempat_lahir" class="form-control" autofocus data-parsley-required="true" value="{{{ old('tempat_lahir') ?? ($data['tempat_lahir'] ?? null) }}}">
       </div>
+
       <div class="form-group">
         <label for="name">Tanggal Lahir</label>
         <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" autofocus data-parsley-required="true" value="{{{ old('tanggal_lahir') ?? ($data['tanggal_lahir'] ?? null) }}}">
       </div>
+
+      {{-- <div class="col-md-6">
+        <label for="name">Tanggal Lahir</label>
+        <input type="text" name="tanggal_lahirr" class="form-control date-picker" placeholder="Tanggal Lahir" value="{{{ old('tanggal_lahirr') ?? (isset($data['tanggal_lahir']) ? $data['tanggal_lahir']->format('d-m-Y') : null) ?? null }}}" />
+    </div> --}}
+
       <div class="form-group">
         <label for="name">Alamat</label>
         <input type="textarea" id="alamat" name="alamat" class="form-control" autofocus data-parsley-required="true" value="{{{ old('alamat') ?? ($data['alamat'] ?? null) }}}">

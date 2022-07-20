@@ -41,14 +41,14 @@ class GuruController extends Controller
     public function show($id)
     {
         $data = Guru::findOrFail($id);
-        $jenis_agama= Guru::pluck('nama','id');
+        $jenis_agama= Agama::pluck('nama','id');
         return view('pages.admin.master.guru.show', ['data' => $data, 'jenis_agama'=> $jenis_agama]);
     }
 
     public function edit($id)
     {
         $data = Guru::findOrFail($id);
-        $jenis_agama= Guru::pluck('nama','id');
+        $jenis_agama= Agama::pluck('nama','id');
         return view('pages.admin.master.guru.add-edit', ['data' => $data, 'jenis_agama'=> $jenis_agama]);
     }
     public function update(Request $request, $id)

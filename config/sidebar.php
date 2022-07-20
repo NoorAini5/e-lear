@@ -74,9 +74,6 @@ return [
                             'url' => '/admin/master-data/jurusan',
                             'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Jurusan'
                         ],[
-                            'url' => '/admin/master-data/kelas',
-                            'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Kelas'
-                        ], [
                             'url' => '/admin/master-data/mapel',
                             'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Mapel'
                         ],

@@ -50,11 +50,11 @@
         </div>
         <div class="form-group">
             <label for="name">NIS</label>
-            <input type="text" id="nis" name="nis" class="form-control" autofocus data-parsley-required="true" value="{{{ old('nis') ?? ($data['nis'] ?? null) }}}">
+            <input type="text" id="nis" name="nis" class="form-control" autofocus data-parsley-required="true" minlength="10" maxlength="10"  value="{{{ old('nis') ?? ($data['nis'] ?? null) }}}">
           </div>
           <div class="form-group">
             <label for="name">No Induk</label>
-            <input type="text" id="no_induk" name="no_induk" class="form-control" autofocus data-parsley-required="true" value="{{{ old('no_induk') ?? ($data['no_induk'] ?? null) }}}">
+            <input type="text" id="no_induk" name="no_induk" class="form-control" autofocus data-parsley-required="true" minlength="4" maxlength="4"  value="{{{ old('no_induk') ?? ($data['no_induk'] ?? null) }}}">
           </div>
           <div class="form-group">
             <label for="name">Tempat Lahir</label>

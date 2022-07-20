@@ -48,7 +48,7 @@
       </div>
       <div class="form-group">
         <label for="name">Files</label>
-        <input type="file" id="nama_file" name="nama_file" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->nama_file ?? old('nama_file') }}}">
+        <input type="file" id="nama_file" name="nama_file" class="form-control" value="{{{ $data->nama_file ?? old('nama_file') }}}">
       </div>
       <div class="form-group">
         <label for="name">Video</label>
