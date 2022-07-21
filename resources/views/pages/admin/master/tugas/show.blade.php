@@ -53,10 +53,10 @@
                         @foreach ($jawabantugas as $tugas)
                         <tr>
                             <td> {{ $tugas->user->name }}</td>
-                            <td > {{ $tugas->jawaban }}</a> </td>
+                            {{-- <td > {{ $tugas->jawaban }}</a> </td> --}}
+                            <td><a href="/downloadTugas/{{ $tugas->jawaban }}">{{ $tugas->jawaban }}</a></td>
                         </tr>
                         @endforeach
-
                     </tbody>
                     <tfoot>
                         <tr>

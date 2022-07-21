@@ -83,9 +83,14 @@ class MateriController extends Controller
     }
     public function show($id)
     {
-        // $materis=Materi::where('jurusan', $id)->get();
+        $mapel=Mapel::where('id', $id)->get();
         $data = Materi::findOrFail($id);
         $jenis_mapel= Materi::pluck('nama','id');
-        return view('pages.admin.master.materi.show', ['data' => $data, 'jenis_mapel'=> $jenis_mapel]);
+        return view('pages.admin.master.materi.show', ['data' => $data, 'jenis_mapel'=> $jenis_mapel,'mapel'=>$mapel]);
     }
+    public function downloadTugas($jawaban){
+        $filepath = public_path('jawabantugas' . '/' . $jawaban);
+        return Response()->download($filepath);
+    }
+
 }

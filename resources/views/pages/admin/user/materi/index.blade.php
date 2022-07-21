@@ -196,28 +196,6 @@
                             </div>
                         </div>
 
-
-                        @php
-                        $nilai = 'Belum upload tugas';
-                        $tugasSiswaExists = JawabanTugas::where([
-                            'user_id' => auth()->id(),
-                            'id_tugas' => $tugas->id])->count();
-
-                                if($tugasSiswaExists){
-                            $userTugasnBenar = JawabanTugas::where([
-                                'user_id' => auth()->id(),
-                                'id_tugas' => $tugas->id]);
-                                // 'benar' => '1'])->count();
-
-                            // $jumlah_soal = count($ujian->soal);
-
-                            // $nilai = 'Nilai: '.($userUjianBenar/$jumlah_soal)*100;
-                            $nilai = 'Nilai: Sudah Upload ';
-
-                        }
-                            @endphp
-
-
                         <p> Jawaban Anda : </p>
 
                             <form action="{{ route('user.jawabantugas.jawabanTugas', $tugas->id) }}" style="margin-top:10px" enctype="multipart/form-data" method="POST">
@@ -237,10 +215,6 @@
                                             <i class="fa fa-fw fa-ban"></i>
                                             <span>Cancel upload</span>
                                         </button>
-                                        {{-- <button type="button" class="btn btn-default delete m-r-3">
-                                            <i class="fa fa-fw fa-trash"></i>
-                                            <span>Delete</span>
-                                        </button> --}}
                                         <!-- The global file processing state -->
                                         <span class="fileupload-process"></span>
                                     </div>
@@ -256,7 +230,7 @@
                                 </div>
                             </form>
                             <span class="ml-auto">
-                                {{ $nilai }}
+                                {{-- {{ $nilai }} --}}
                             </span>
                     </div>
                     @endforeach
@@ -293,7 +267,7 @@
                                             $nilai = 'Nilai: '.($userUjianBenar/$jumlah_soal)*100;
 
                                         }
-                                            @endphp
+                                    @endphp
                                   </div>
 
                                     <span class="ml-auto">

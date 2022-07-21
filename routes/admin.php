@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Admin\Master\PresensiController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\Master\MateriController;
+use App\Http\Controllers\Admin\Master\PresensiController;
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     require base_path('vendor/laravel/fortify/routes/routes.php');
@@ -52,6 +53,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::resource('fakultas', 'FakultasController');
             Route::resource('jurusan', 'JurusanController');
             Route::resource('tmpresensi', 'PresensiController');
+            Route::get('/downloadTugas/{jawaban}', [MateriController::class, 'downloadTugas']);
             Route::get('detailquiz/{id} ', 'UjianController@detailQuiz')->name('detailquiz.detailQuiz');
             //presensi
             Route::get('data-absensi',[PresensiController::class,'index']);

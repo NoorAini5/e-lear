@@ -72,12 +72,37 @@
 
     </style> --}}
 
+
+
+    <div class="card">
+        <div class="">
+            <table class="table">
+                <thead>
+                    {{-- <tr> <td width="50" class="text-right"><b> Nama Mata Kuliah </b></td> <td width="10"> : </td> <td width="300"> {{ $mapel->nama }} </td> </tr> --}}
+                    {{-- <tr> <td class="text-right"><b> Jumlah SKS </b></td> <td> : </td> <td> {{ $mapel->sks }} </td> </tr>
+                    <tr> <td class="text-right"><b> Semester </b></td> <td> : </td>  <td>{{ $mapel->semester }} </td> </tr> --}}
+                </thead>
+
+            </table>
+
+        </div>
+</div>
+
+
 <div class="text-center">
     <br>
     <h1>  {{ $data['nama']  }} </h1>
     <h4>  {{ $data['isi']  }} </h4>
-    <h4>  {{ $data['nama_file']  }} </h4>
-    <h4>  {{ $data['video']  }} </h4>
+    {{-- <h4>  {{ $data['nama_file']  }} </h4>
+    <h4>  {{ $data['video']  }} </h4> --}}
+    <div class="">
+        <h3><a href="/downloadMateri/{{ $data->nama_file }}">{{ $data->nama_file }}</a></h3>
+            @isset($data->video)
+            <video width="10%" max-width="50" height="auto" controls>
+                <source src="{{ asset('/video/'.$data->video) }}">
+            </video>
+            @endisset
+    </div>
  </div>
 
     </p>

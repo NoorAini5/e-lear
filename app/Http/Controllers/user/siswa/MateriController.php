@@ -120,14 +120,21 @@ class MateriController extends Controller
     }
     public function jawabanTugas(Request $request, $id)
     {
+
         $file = $request->file('jawaban');
             $jawaban = $file->getClientOriginalName();
             $file->move('jawabantugas', $jawaban);
             $validatedData['jawaban'] = $jawaban;
+            $validatedData['id_tugas'] = $request->id_tugas;
+            $validatedData['user_id'] = auth()->user()->id;
+            // JawabanTugas::create($validatedData);
 
-        $request->request->add(['user_id' => auth()->user()->id]);
+        // $request->request->add(['user_id' => auth()->user()->id]);
         // $diskusi=Diskusi::findOrFail($id);
-        $jawabantugas=JawabanTugas::create($request->all());
+        JawabanTugas::create($validatedData);
+        // dd($request);
+        // $jawabantugas=JawabanTugas::create($request->all());
         return redirect()->route('user.tugas.show',$id);
+
     }
 }
