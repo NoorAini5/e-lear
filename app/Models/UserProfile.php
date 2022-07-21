@@ -18,6 +18,7 @@ class UserProfile extends Model
         'tanggal_lahir',
         'alamat',
         'no_telp',
+        'foto',
     ];
 
     protected $dates = ['tanggal_lahir'];

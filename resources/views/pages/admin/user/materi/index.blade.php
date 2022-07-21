@@ -176,66 +176,41 @@
                 <div class="tab-pane fade" id="default-tab-3">
                     <h3 class="m-t-10"> Tugas</h3>
                     <p>
-
-                    @foreach ($tugass as $tugas)
-                    <div class="panel-body"  style="margin-top:20px">
-                        <div class="note note-blue m-b-15">
-                            <div class="note-icon f-s-20">
-                                <i class="fa fa-lightbulb fa-2x"></i>
-                            </div>
-                            <div class="note-content">
-                                <h4 class="m-t-5 m-b-5 p-b-2">{{ $tugas->judul }}</h4>
-                                <div class="form-group">
-                                    <input type="hidden" name="id_tugas" value="{{$tugas->id}}">
-                                </div>
-                                <ul class="m-b-5 p-l-25">
-                                    <li>{{ $tugas->isi }}</li>
-                                    <li><a href="/downloadMateri/{{ $tugas->nama_file }}">{{ $tugas->nama_file }}</a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-
-                        <p> Jawaban Anda : </p>
-
-                            <form action="{{ route('user.jawabantugas.jawabanTugas', $tugas->id) }}" style="margin-top:10px" enctype="multipart/form-data" method="POST">
-                                @csrf
-                                <div class="row fileupload-buttonbar">
-                                    <div class="form-group">
-                                        <input type="hidden" name="id_tugas" value="{{$tugas->id}}">
-                                    </div>
-                                    <div class="col-xl-12">
-                                            <input type="file" id="jawaban" name="jawaban" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->jawaban ?? old('jawaban') }}}">
-                                        </span>
-                                        <button type="submit" class="btn btn-primary start m-r-3" style="margin-top:10px">
-                                            <i class="fa fa-fw fa-upload"></i>
-                                            <span>Start upload</span>
-                                        </button>
-                                        <button type="reset" class="btn btn-default cancel m-r-3"  style="margin-top:10px">
-                                            <i class="fa fa-fw fa-ban"></i>
-                                            <span>Cancel upload</span>
-                                        </button>
-                                        <!-- The global file processing state -->
-                                        <span class="fileupload-process"></span>
-                                    </div>
-                                    <!-- The global progress state -->
-                                    <div class="col-xl-5 fileupload-progress fade d-none d-xl-block">
-                                        <!-- The global progress bar -->
-                                        <div class="progress progress-striped active m-b-0">
-                                            <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                        @foreach ($tugass as $tugas)
+                                <div class="panel-body"  style="margin-top:20px">
+                                    <div class="note note-blue m-b-15">
+                                        <div class="note-icon f-s-20">
+                                            <i class="fa fa-lightbulb fa-2x"></i>
                                         </div>
-                                        <!-- The extended global progress state -->
-                                        <div class="progress-extended">&nbsp;</div>
+                                        <div class="note-content">
+                                            <h4 class="m-t-5 m-b-5 p-b-2">{{ $tugas->judul }}</h4>
+                                            <div class="form-group">
+                                                <input type="hidden" name="id_tugas" value="{{$tugas->id}}">
+                                            </div>
+                                            <ul class="m-b-5 p-l-25">
+                                                <li>{{ $tugas->isi }}</li>
+                                                <li><a href="/downloadMateri/{{ $tugas->nama_file }}">{{ $tugas->nama_file }}</a></li>
+                                            </ul>
+
+                                        </div>
                                     </div>
                                 </div>
-                            </form>
-                            <span class="ml-auto">
-                                {{-- {{ $nilai }} --}}
-                            </span>
-                    </div>
-                    @endforeach
-                    </p>
+                                <p> Jawaban Anda : </p>
 
+                                @if(empty($jawabantugas) || $jawabantugas->count() == 0)
+                                <h4 class="card-title text-center"> Anda Belum Mengerjakan  </h4>
+                                <a href=" {{  route('user.tugas.show',$tugas->id) }}"> Upload jawaban anda </a>
+                                @else
+                                <div class=" ">
+                                    <div class=" ">
+                                        <h4 class="card-title text-center"> Anda Sudah mengumpulkan {{ $tugas->judul }} </h4>
+                                        <div class="d-grid">
+                                        </div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                                @endif
+                         @endforeach
+                    </p>
                 </div>
                 <!-- end tugas-->
 

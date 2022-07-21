@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\Master\TugasController;
 use App\Http\Controllers\Admin\Master\MateriController;
 use App\Http\Controllers\Admin\Master\PresensiController;
 
@@ -53,7 +54,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::resource('fakultas', 'FakultasController');
             Route::resource('jurusan', 'JurusanController');
             Route::resource('tmpresensi', 'PresensiController');
-            Route::get('/downloadTugas/{jawaban}', [MateriController::class, 'downloadTugas']);
+            Route::get('/downloadTugas/{jawaban}', [TugasController::class, 'downloadTugas']);
             Route::get('detailquiz/{id} ', 'UjianController@detailQuiz')->name('detailquiz.detailQuiz');
             //presensi
             Route::get('data-absensi',[PresensiController::class,'index']);
@@ -61,6 +62,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::post('buatAbsen',[PresensiController::class,'buatAbsen']);
             Route::delete('hapusAbsen{id}',[PresensiController::class,'hapusAbsen']);
             Route::get('rekapAbsen{id}',[PresensiController::class,'rekapAbsen']);
+            //tugas
+            Route::get('data-tugas',[PresensiController::class,'index']);
+            Route::get('editTugas{id}',[PresensiController::class,'editTugas']);
+            Route::post('buatTugas',[PresensiController::class,'buatTugas']);
+            Route::delete('hapusAbsen{id}',[PresensiController::class,'hapusTugas']);
+            Route::get('rekapTugas{id}',[PresensiController::class,'rekapTugas']);
 
         });
 

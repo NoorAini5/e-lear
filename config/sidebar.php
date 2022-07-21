@@ -178,17 +178,19 @@ return [
             'title' => 'Mata Kuliah',
             'url' => 'mapel2',
             'caret' => false
-        ], [
-            'icon' => 'fa fa-cogs',
-            'title' => 'Ganti Password',
-            'url' => '#',
-            'caret' => false
-        ], [
-            'icon' => 'fa fa-sign-out-alt',
-            'title' => 'Logout',
-            'url' => '#',
-            'caret' => false
-        ]
+        ],
+        // [
+        //     'icon' => 'fa fa-cogs',
+        //     'title' => 'Ganti Password',
+        //     'url' => '#',
+        //     'caret' => false
+        // ],
+        // [
+        //     'icon' => 'fa fa-sign-out-alt',
+        //     'title' => 'Logout',
+        //     'url' => 'users/logout',
+        //     'caret' => false
+        // ]
     ],
 
 

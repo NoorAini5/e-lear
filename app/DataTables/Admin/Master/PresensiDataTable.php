@@ -58,6 +58,9 @@ class PresensiDataTable extends DataTable
         return $this->builder()
                     ->setTableId('kelas-table')
                     ->columns($this->getColumns())
+                    ->parameters([
+                        'responsive' => true,
+                        'autoWidth' => false,])
                     ->minifiedAjax()
                     ->dom('<"dataTables_wrapper dt-bootstrap"B<"row"<"col-xl-7 d-block d-sm-flex d-xl-block justify-content-center"<"d-block d-lg-inline-flex"l>><"col-xl-5 d-flex d-xl-block justify-content-center"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>>')
                     ->orderBy(1)
@@ -83,7 +86,7 @@ class PresensiDataTable extends DataTable
                   ->printable(false)
                   ->width(60)
                   ->addClass('text-center'),
-            //Column::make('id'),
+            Column::make('id'),
             Column::make('mapel')->data('mapel.nama'),
             Column::make('hari'),
             Column::make('tanggal'),

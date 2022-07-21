@@ -123,7 +123,7 @@ class MateriController extends Controller
 
         $file = $request->file('jawaban');
             $jawaban = $file->getClientOriginalName();
-            $file->move('jawabantugas', $jawaban);
+            $file->move('materi', $jawaban);
             $validatedData['jawaban'] = $jawaban;
             $validatedData['id_tugas'] = $request->id_tugas;
             $validatedData['user_id'] = auth()->user()->id;
@@ -135,6 +135,5 @@ class MateriController extends Controller
         // dd($request);
         // $jawabantugas=JawabanTugas::create($request->all());
         return redirect()->route('user.tugas.show',$id);
-
     }
 }

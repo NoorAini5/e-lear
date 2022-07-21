@@ -54,7 +54,8 @@
                         <tr>
                             <td> {{ $tugas->user->name }}</td>
                             {{-- <td > {{ $tugas->jawaban }}</a> </td> --}}
-                            <td><a href="/downloadTugas/{{ $tugas->jawaban }}">{{ $tugas->jawaban }}</a></td>
+                            <td><a href="/downloadMateri/{{ $tugas->jawaban }}">{{ $tugas->jawaban }}</a></td>
+                            {{-- <h3><a href="/downloadMateri/{{ $tugas->jawaban }}">{{ $tugas->jawaban }}</a></h3> --}}
                         </tr>
                         @endforeach
                     </tbody>

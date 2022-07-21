@@ -146,7 +146,14 @@ class PresensiController extends Controller
     public function show($id)
     {
 
-        $data = tm_presensi::findOrFail($id);
-        return view('pages.admin.master.presensi.show', ['data' => $data]);
+        $data = Presensi::findOrFail($id);
+        $totalizin=Presensi::where('presensi_id',$id)->where('keterangan','izin')->count();
+        $totalalpha=Presensi::where('presensi_id',$id)->where('keterangan','Belum Presensi')->count();
+        $totalsakit=Presensi::where('presensi_id',$id)->where('keterangan','sakit')->count();
+        $totalhadir=Presensi::where('presensi_id',$id)->where('keterangan','hadir')->count();
+        $totalsiswa=Presensi::where('presensi_id',$id)->count();
+        // $presensi = Presensi::where('presensi_id',$id)->where('jam_absen'!=null)->get();
+        $presensi = Presensi::where('presensi_id',$id)->get();
+        return view('pages.admin.master.presensi.show', ['data' => $data,'presensi'=>$presensi,'totalizin'=>$totalizin,'totalalpha'=>$totalalpha,'totalsakit'=>$totalsakit,'totalhadir'=>$totalhadir,'totalsiswa'=>$totalsiswa]);
     }
 }

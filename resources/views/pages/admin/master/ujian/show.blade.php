@@ -61,7 +61,7 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th>Jumlah yang sudah mengumpulkan</th>
+                            <th>Jumlah yang sudah mengerjakan</th>
                             <td> {{ $jumlahmengerjakan }}</td>
                         </tr>
                     </tfoot>

@@ -120,7 +120,8 @@ class UjianController extends Controller
     public function show($id)
     {
         // $hasilujian = SiswaUjian::findOrFail();
-        $hasilujian=SiswaUjian::where('ujian_id', $id)->get();
+        // $hasilujian=SiswaUjian::where('ujian_id', $id)->get();
+        $hasilujian=SiswaUjian::where('user_id',$id)->where('ujian_id',$id)->get();
         $data = Ujian::findOrFail($id);
 
         $jumlahmengerjakan=SiswaUjian::where('ujian_id',$id)->count('ujian_id');

@@ -17,7 +17,6 @@
                         <ul class="timeline">
                             <li>
                                 <div class="timeline-body">
-
                                     <div class="timeline-header">
                                         {{-- <span class="userimage"><img src="/assets/img/user/user-1.jpg" alt=""></span> --}}
                                         <span class="username">{{ $diskusi->judul }}<small></small></span>
@@ -39,13 +38,13 @@
                                                 <div class="form-group">
                                                     {{-- <label>Jawaban Anda</label> --}}
                                                     <input type="text" id="jawaban" name="jawaban" class="form-control rounded-corner" placeholder="Tulis komentar anda . . ." autofocus data-parsley-required="true" value="{{{ $data->jawaban ?? old('jawaban') }}}">
-                                                    <br>
 
+                                                </div>
                                                     <button type="submit" class="btn btn-primary">Simpan</button>
                                                     <a href="javascript:history.back(-1);" class="btn btn-success">
                                                         <i class="fa fa-arrow-circle-left"></i> Kembali
                                                     </a>
-                                                </div>
+
                                             </form>
                                         </div>
                                     </div>
@@ -55,11 +54,6 @@
                                     @foreach ($jawabandiskusis as $i)
                                         <ul class="media-list media-list-with-divider media-messaging">
                                         <li class="media media-sm">
-                                            <a href="javascript:;" class="pull-left">
-                                                {{-- <img src={{ $i->user }}alt="" class="media-object rounded-corner"> --}}
-                                                {{-- {{ $i->user-> }} --}}
-                                                {{-- <img src={{ $i->user->siswa }}alt="" class="media-object rounded-corner"> --}}
-                                            </a>
                                             <div class="media-body">
                                                 <br>
                                                 <b class="media-heading">{{$i->user->name}}</b>

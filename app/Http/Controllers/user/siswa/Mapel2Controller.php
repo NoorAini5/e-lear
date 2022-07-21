@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers\user\siswa;
 
-use App\Http\Controllers\Controller;
-use App\Models\Diskusi;
-use Illuminate\Http\Request;
 use App\Models\Kelas;
 use App\Models\Mapel;
-use App\Models\Materi;
-use App\Models\Presensi;
-use App\Models\SiswaUjian;
-use App\Models\tm_presensi;
 use App\Models\Tugas;
 use App\Models\Ujian;
+use App\Models\Materi;
+use App\Models\Diskusi;
+use App\Models\Presensi;
 use App\Models\UjianSoal;
+use App\Models\SiswaUjian;
+use App\Models\tm_presensi;
+use App\Models\JawabanTugas;
+use Illuminate\Http\Request;
 use App\Models\UjianSoalJawaban;
+use App\Http\Controllers\Controller;
 
 class Mapel2Controller extends Controller
 {
@@ -64,13 +65,16 @@ class Mapel2Controller extends Controller
         $materis=Materi::where('matkul', $id)->get();
         $diskusis=Diskusi::where('mapel', $id)->get();
         $presensis=Presensi::where('mapel', $id)->where('user_id',auth()->user()->id)->get();
+        $jawabantugass=JawabanTugas::where('id_tugas', $id)->where('user_id',auth()->user()->id)->get();
+        // $keluarga = Keluarga::where('id', auth()->user()->id)->first();
+        $jawabantugas=JawabanTugas::where('user_id',auth()->user()->id)->where('id_tugas',$id)->get();
+        // $jawabantugas=JawabanTugas::where('id_tugas',$id)->where('user_id',auth()->user()->id)->get();
         $tugass=Tugas::where('mapel', $id)->get();
         $ujians=Ujian::where('mapel_id', $id)->get();
-
         $id_mapel=$id;
         // dd(['id_mapel' => $id_mapel, 'materis' => $materis, 'diskusis'=>$diskusis,'tugass'=>$tugass,'ujians'=>$ujians,'presensis'=>$presensis,'mapel'=>$mapel]);
         // dd($mapels);
-        return view('pages.admin.user.materi.index',['id_mapel' => $id_mapel, 'materis' => $materis, 'diskusis'=>$diskusis,'tugass'=>$tugass,'ujians'=>$ujians,'presensis'=>$presensis,'mapel'=>$mapel]);
+        return view('pages.admin.user.materi.index',['id_mapel' => $id_mapel, 'materis' => $materis, 'diskusis'=>$diskusis,'tugass'=>$tugass,'ujians'=>$ujians,'presensis'=>$presensis,'mapel'=>$mapel,'jawabantugass'=>$jawabantugass, 'jawabantugas'=>$jawabantugas]);
     }
 
     /**

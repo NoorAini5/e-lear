@@ -27,4 +27,8 @@ class Presensi extends Model
     {
         return $this->belongsTo(tm_presensi::class,'presensi_id');
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\user\siswa;
 
 use App\Http\Controllers\Controller;
+use App\Models\JawabanTugas;
 use App\Models\Tugas;
 use Illuminate\Http\Request;
 
@@ -48,9 +49,10 @@ class TugasController extends Controller
      */
     public function show($id)
     {
-        $tugass=Tugas::where('mapel', $id)->get();
-        // dd($materis);
-        return view('pages.admin.user.materi.tugas',['tugass' => $tugass]);
+        $jawabantugas=JawabanTugas::orderBy('created_at','desc')->where('id_tugas',$id)->get();
+        $jumlah = JawabanTugas::where('id_tugas',$id)->count('id_tugas');
+        $tugas=Tugas::findOrFail($id);
+        return view('pages.admin.user.materi.tugas',['tugas' => $tugas,'id'=>$id,'jumlah'=>$jumlah,'jawabantugas'=>$jawabantugas]);
     }
 
     /**

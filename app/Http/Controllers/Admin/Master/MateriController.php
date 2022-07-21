@@ -88,9 +88,5 @@ class MateriController extends Controller
         $jenis_mapel= Materi::pluck('nama','id');
         return view('pages.admin.master.materi.show', ['data' => $data, 'jenis_mapel'=> $jenis_mapel,'mapel'=>$mapel]);
     }
-    public function downloadTugas($jawaban){
-        $filepath = public_path('jawabantugas' . '/' . $jawaban);
-        return Response()->download($filepath);
-    }
 
 }

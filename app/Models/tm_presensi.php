@@ -26,4 +26,5 @@ class tm_presensi extends Model
     {
         return $this->belongsTo(Presensi::class);
     }
+
 }
