@@ -48,17 +48,17 @@
                         @endforeach
                         <div class="d-flex justify-content-between mt-4">
                             @if ($loop->index > 0)
-                                <button type="button" class="btn btn-primary btn--sebelumnya"><i class="fa fa-angle-left"></i> Sebelumnya
+                                <button type="button" class="btn btn-primary mb-3 btn--sebelumnya"><i class="fa fa-angle-left"></i> Sebelumnya
                                 </button>
                             @endif
                             @if ($loop->iteration == count($ujian->soal))
                             @else
-                                <button type="button" class="btn btn-success ml-auto btn--lanjut">Lanjut
-                                    <i class="fa fa-angle-right"></i></button>
+                                <button type="button" class="btn btn-success mb-3 ml-auto btn--lanjut">Lanjut
+                                    <i class="fa fa-arrow-circle-right"></i></button>
 
                             @endif
                             <a href="javascript:history.back();" class="btn btn-success mb-3">
-                                <i class="fa fa-arrow-circle-left"></i> Kembali
+                                <i class="fa fa-arrow-circle-left"></i>   Kembali
                             </a>
                         </div>
                     </div>

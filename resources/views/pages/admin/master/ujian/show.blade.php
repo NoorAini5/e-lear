@@ -53,7 +53,7 @@
                     <tbody>
                         @foreach ($hasilujian as $ujian)
                         <tr>
-                            <td> {{ $ujian->user->name }}</td>
+                            <td> {{ $ujian }}</td>
                             <td ><a href="{{ route('admin.master-data.detailquiz.detailQuiz',$ujian->id) }}"> Lihat</a> </td>
                         </tr>
                         @endforeach

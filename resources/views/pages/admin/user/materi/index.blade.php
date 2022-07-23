@@ -197,7 +197,8 @@
                                 </div>
                                 <p> Jawaban Anda : </p>
 
-                                @if(empty($jawabantugas) || $jawabantugas->count() == 0)
+                                {{-- @if(empty($jawabantugas) || $jawabantugas->count() == 0) --}}
+                                @if ($jawabantugas->where('id_tugas',$tugas->id)->count()==0)
                                 <h4 class="card-title text-center"> Anda Belum Mengerjakan  </h4>
                                 <a href=" {{  route('user.tugas.show',$tugas->id) }}"> Upload jawaban anda </a>
                                 @else
@@ -257,7 +258,7 @@
 
                 <!-- begin presensi -->
                             <div class="tab-pane fade" id="default-tab-5">
-                                <h3 class="m-t-10"><i class="fa fa-cog"></i> Presensi</h3>
+                                <h3 class="m-t-10"><i class=""></i> Presensi</h3>
 
                                 <div class="row">
                                     @foreach ($presensis as $presensi)
